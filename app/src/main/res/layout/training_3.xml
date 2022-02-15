@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/banner"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:scaleType="centerCrop"
+        android:adjustViewBounds="true"
+        android:layout_margin="20dp"
+        android:src="@drawable/close_icon" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="90dp">
+
+        <TextView
+            android:id="@+id/line11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Put your device"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/line12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="on the floor"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:layout_marginLeft="30dp"
+            android:layout_below="@id/line11"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="30sp"
+            android:text="Adject tilt angle"
+            android:layout_below="@id/line12"
+            android:layout_marginTop="40dp"/>
+
+    </RelativeLayout>
+</RelativeLayout>

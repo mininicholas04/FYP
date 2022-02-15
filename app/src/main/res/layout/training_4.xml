@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/banner"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:scaleType="centerCrop"
+        android:adjustViewBounds="true"
+        android:layout_margin="20dp"
+        android:src="@drawable/close_icon" />
+
+    <ImageView
+        android:id="@+id/training_bg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:adjustViewBounds="true"
+        android:src="@drawable/pose1" />
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp" >
+        <TextView
+            android:id="@+id/training_pose"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="yogapose1"
+            android:textStyle="bold"
+            android:layout_alignParentRight="true"
+            android:textSize="50dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Yoga pose"
+            android:layout_below="@+id/training_pose"
+            android:textSize="20dp"
+            android:layout_alignParentRight="true" />
+    </RelativeLayout>
+
+</RelativeLayout>

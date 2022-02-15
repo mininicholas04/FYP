@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardview_1"
+        android:layout_width="350dp"
+        android:layout_height="350dp"
+        app:cardElevation="10dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="180dp"
+        app:cardCornerRadius="30dp">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="30dp">
+            <TextView
+                android:id="@+id/titlee"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Program"
+                android:textStyle="bold"
+                android:layout_marginTop="5dp"
+                android:textSize="25dp"/>
+            <TextView
+                android:id="@+id/descrii"
+                android:layout_below="@+id/titlee"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="This program consists of"
+                android:layout_marginTop="5dp" />
+
+            <LinearLayout
+                android:id="@+id/descri_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/descrii">
+                <TextView
+                    android:id="@+id/round_num"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:layout_marginTop="5dp" />
+                <TextView
+                    android:id="@+id/text_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" rounds and "
+                    android:layout_marginTop="5dp" />
+                <TextView
+                    android:id="@+id/exercise_num"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:layout_marginTop="5dp" />
+                <TextView
+                    android:id="@+id/text_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" exercises."
+                    android:layout_marginTop="5dp" />
+            </LinearLayout>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_below="@id/descri_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"/>
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+    <Button
+        android:id="@+id/btn_startTraining"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/button_roundcorner"
+        android:text="Start Training"
+        android:textColor="@android:color/white"
+        android:layout_marginLeft="30dp"
+        android:textSize="15dp"
+        android:layout_below="@+id/cardview_1" />
+</RelativeLayout>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="30dp">
+
+    <TextView
+        android:id="@+id/snap_food"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="FoodName"
+        android:textStyle="bold"
+        android:textSize="30dp"
+        android:layout_marginTop="30dp"/>
+
+    <TextView
+        android:id="@+id/snap_ingred"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ingrdients"
+        android:layout_below="@+id/snap_food"
+        android:layout_marginTop="10dp"/>
+
+
+    <TableLayout
+        android:layout_below="@+id/snap_ingred"
+        android:id="@+id/TableLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:stretchColumns="0" >
+
+        <TableRow>
+            <TextView
+                android:id="@+id/snap_nutri"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:text="Nutrition facts"
+                android:textStyle="bold"
+                android:textAlignment="center"/>
+
+            <TextView
+                android:id="@+id/snap_100g"
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:text="Per 100 Unit Serving"
+                android:textStyle="bold" />
+
+        </TableRow>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/snap_recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"/>
+
+    </TableLayout>
+</RelativeLayout>

@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="30dp"
+    android:id="@+id/text_dashboard"
+    tools:context=".ui.dashboard.DashboardFragment">
+
+    <TextView
+        android:id="@+id/header1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="What would you"
+        android:textStyle="bold"
+        android:textSize="30dp"/>
+
+    <TextView
+        android:id="@+id/header2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="like to eat?"
+        android:textStyle="bold"
+        android:textSize="30dp"
+        android:layout_below="@+id/header1"/>
+
+
+    <LinearLayout
+        android:id="@+id/cw1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@id/header2">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cww"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardElevation="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_below="@+id/exclusive_text"
+            app:cardBackgroundColor="@color/white"
+            android:layout_marginBottom="30dp"
+            app:cardCornerRadius="30dp">
+
+        <SearchView
+            android:id="@+id/searchbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <!-- 為SearchView定義自動補齊的ListView-->
+        <ListView
+            android:id="@+id/searchbar_list"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/text3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Recommend"
+        android:layout_below="@+id/cw1"
+        android:textStyle="bold"
+        android:textSize="20dp" />
+
+    <HorizontalScrollView
+        android:id="@+id/scroll1"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:fillViewport="true"
+        android:layout_below="@id/text3">
+
+    <LinearLayout
+        android:id="@+id/field1"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_below="@+id/text3"
+        android:layout_marginTop="10dp">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/vitaminC"
+            android:layout_width="150dp"
+            android:layout_height="30dp"
+            app:cardElevation="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="5dp"
+            app:cardCornerRadius="30dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Vitamin C"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                android:layout_marginTop="5dp"
+                android:textSize="15dp"/>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/protein"
+            android:layout_width="150dp"
+            android:layout_height="30dp"
+            app:cardElevation="10dp"
+            android:layout_marginTop="5dp"
+            app:cardBackgroundColor="@color/white"
+            android:layout_marginLeft="30dp"
+            app:cardCornerRadius="30dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Protein"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                android:layout_marginTop="5dp"
+                android:textSize="15dp"/>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/calcium"
+            android:layout_width="150dp"
+            android:layout_height="30dp"
+            app:cardElevation="10dp"
+            android:layout_marginTop="5dp"
+            app:cardBackgroundColor="@color/white"
+            android:layout_marginLeft="30dp"
+            app:cardCornerRadius="30dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Calcium"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                android:layout_marginTop="5dp"
+                android:textSize="15dp"/>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+    </HorizontalScrollView>
+
+    <TextView
+        android:id="@+id/text44"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="By body part"
+        android:layout_below="@+id/scroll1"
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"
+        android:textSize="20dp" />
+
+    <HorizontalScrollView
+        android:id="@+id/scroll2"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:fillViewport="true"
+        android:layout_below="@id/text44">
+
+        <LinearLayout
+            android:id="@+id/field2"
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:layout_below="@+id/text44"
+            android:layout_marginTop="10dp">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/depression"
+                android:layout_width="110dp"
+                android:layout_height="140dp"
+                app:cardElevation="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="5dp"
+                app:cardCornerRadius="30dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Depression"
+                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:layout_marginTop="5dp"
+                    android:textSize="15dp"/>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/eyes"
+                android:layout_width="110dp"
+                android:layout_height="140dp"
+                app:cardElevation="10dp"
+                android:layout_marginTop="5dp"
+                app:cardBackgroundColor="@color/white"
+                android:layout_marginLeft="30dp"
+                app:cardCornerRadius="30dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Eyes"
+                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:layout_marginTop="5dp"
+                    android:textSize="15dp"/>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/legs"
+                android:layout_width="110dp"
+                android:layout_height="140dp"
+                app:cardElevation="10dp"
+                android:layout_marginTop="5dp"
+                app:cardBackgroundColor="@color/white"
+                android:layout_marginLeft="30dp"
+                app:cardCornerRadius="30dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Legs"
+                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:layout_marginTop="5dp"
+                    android:textSize="15dp"/>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <TextView
+        android:id="@+id/text34"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nutritinal facts"
+        android:layout_below="@+id/scroll2"
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/text234"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Snap a picture of the food barcode"
+        android:layout_below="@+id/text34" />
+
+    <TextView
+        android:id="@+id/text1234"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="to know more about nutrition."
+        android:layout_below="@+id/text234" />
+
+    <Button
+        android:id="@+id/btn_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/button_roundcorner"
+        android:text="Snap now"
+        android:textColor="@android:color/white"
+        android:textSize="15dp"
+        android:layout_below="@+id/text1234" />
+
+</RelativeLayout>

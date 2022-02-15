@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="70dp">
+
+    <TextView
+        android:id="@+id/welcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Welcome!"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:layout_marginTop="30dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sign in to continue"
+        android:layout_below="@+id/welcome" />
+
+    <EditText
+        android:id="@+id/user_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="120dp"
+        android:hint="Name"
+        android:background="@drawable/edit_text_design"
+        android:padding="8dp" />
+
+    <EditText
+        android:id="@+id/user_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/user_name"
+        android:hint="Email"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/edit_text_design"
+        android:padding="8dp" />
+
+    <EditText
+        android:id="@+id/user_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:background="@drawable/edit_text_design"
+        android:hint="Password"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/user_email" />
+
+    <TextView
+        android:id="@+id/text_gender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select Gender"
+        android:layout_below="@+id/user_password"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true" />
+
+    <LinearLayout
+        android:id="@+id/gender_field"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal"
+        android:layout_marginTop="15dp"
+        android:layout_below="@id/text_gender">
+
+        <ImageButton android:id="@+id/btn_male"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginRight="35dp"
+            android:background="@drawable/btn_circle_selected"
+            android:src="@drawable/ic_baseline_male_24"/>
+
+        <ImageButton android:id="@+id/btn_female"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/btn_circle"
+            android:src="@drawable/ic_baseline_female_24"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/text_bodypart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Weakness of body part"
+        android:layout_below="@id/gender_field"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp" />
+
+    <Spinner
+        android:layout_marginTop="15dp"
+        android:id="@+id/body_part_spinner"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_below="@+id/text_bodypart"
+        />
+
+    <Button
+        android:id="@+id/btn_signup"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/button_roundcorner"
+        android:text="sign up"
+        android:textColor="@android:color/white"
+        android:textSize="15dp"
+        android:layout_below="@+id/body_part_spinner" />
+
+    <LinearLayout
+        android:id="@+id/layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal"
+        android:layout_below="@+id/btn_signup"
+        android:layout_marginTop="25dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Already have account?" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sign in"
+            android:onClick="signIn"
+            android:layout_marginLeft="15dp"/>
+
+    </LinearLayout>
+
+
+
+
+
+</RelativeLayout>

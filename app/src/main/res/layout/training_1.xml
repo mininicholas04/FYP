@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/banner"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:scaleType="centerCrop"
+        android:adjustViewBounds="true"
+        android:layout_margin="20dp"
+        android:src="@drawable/close_icon" />
+
+    <ImageView
+        android:id="@+id/volume_icon"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="40dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/volume_mute"
+        android:layout_below="@+id/text_media"/>
+
+    <TextView
+        android:id="@+id/text122"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Please turn up the volume"
+        android:layout_centerHorizontal="true"
+        android:textSize="30sp"
+        android:layout_below="@+id/volume_icon"/>
+
+    <SeekBar
+        android:id="@+id/seekbar_volume"
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/text122"/>
+    //https://stackoverflow.com/questions/10134338/using-seekbar-to-control-volume-in-android
+
+    <Button
+        android:id="@+id/training_btn1"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/button_roundcorner"
+        android:text="next"
+        android:textColor="@android:color/white"
+        android:textSize="15dp"
+        android:layout_below="@+id/seekbar_volume" />
+
+
+</RelativeLayout>
