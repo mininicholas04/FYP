@@ -21,6 +21,7 @@ import android.os.CountDownTimer;
 import android.speech.tts.TextToSpeech;
 import android.util.Log;
 import android.webkit.WebView;
+import android.widget.TextView;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
@@ -66,6 +67,8 @@ public class PoseGraphic extends Graphic {
   CountDownTimer timer;
   WebView view ;
   Activity activity;
+  TextView yogaCount;
+  static int yogacount = 600;
 
   private final List<String> poseClassification;
   private final Paint classificationTextPaint;
@@ -239,17 +242,27 @@ public class PoseGraphic extends Graphic {
                   public void onTick(long millisUntilFinished) {
                       if(Left>=angle1 && angle1+30 >= Left && Right >= angle2 && angle2+30 >= Right) {
                           count ++ ;
+
+                          yogaCount = activity.findViewById(R.id.yogaCount);
+                          activity.runOnUiThread(new Runnable(){
+                              @Override
+                              public void run() {
+                                  yogaCount.setText(Integer.toString((int) Math.ceil(yogacount/10)));
+                              }
+                          });
+                          yogacount--;
                           if(!t1.isSpeaking()){
                               t1.speak(perfect, TextToSpeech.QUEUE_FLUSH, null,null);
                               t1.playSilentUtterance(4000,TextToSpeech.QUEUE_ADD,null);
                           }
-                          if(count ==200 ){
+                          if(count ==600 ){
                               if(l < yogaArray.size()){
                               l++;
                                   activity.runOnUiThread(new Runnable(){
                                       @Override
                                       public void run() {
                                           view.loadUrl("file:///android_asset/yogapose"+l+".jpg");
+
                                       }
                                   });
                               }
@@ -258,6 +271,7 @@ public class PoseGraphic extends Graphic {
                       }
                       else{
                           count = 0 ;
+                          yogacount=600;
                       }
                   }
 
@@ -280,6 +294,7 @@ public class PoseGraphic extends Graphic {
               drawArcLeft(canvas, pose.getPoseLandmark(firstjoint1), pose.getPoseLandmark(secondjoint1), pose.getPoseLandmark(thirdjoint1), leftPaint, Left);
               drawArcRight(canvas, pose.getPoseLandmark(firstjoint2), pose.getPoseLandmark(secondjoint2), pose.getPoseLandmark(thirdjoint2), rightPaint, Right);
               count =0 ;
+              yogacount=600;
           }
           else if(angle1>= Left && Right >= angle2 && angle2+30 > Right){
               leftPaint.setColor(Color.RED);
@@ -287,6 +302,7 @@ public class PoseGraphic extends Graphic {
               drawArcLeft(canvas, pose.getPoseLandmark(firstjoint1), pose.getPoseLandmark(secondjoint1), pose.getPoseLandmark(thirdjoint1), leftPaint, Left);
               drawArcRight(canvas, pose.getPoseLandmark(firstjoint2), pose.getPoseLandmark(secondjoint2), pose.getPoseLandmark(thirdjoint2), rightPaint, Right);
               count =0 ;
+              yogacount=600;
           }
           else {
               leftPaint.setColor(Color.RED);
@@ -298,6 +314,8 @@ public class PoseGraphic extends Graphic {
                   t1.playSilentUtterance(4000,TextToSpeech.QUEUE_ADD,null);
               }
               count =0 ;
+              yogacount=600;
+
           }
 
               Log.v("Angle " , angle1 +""+ angle2 + "");
