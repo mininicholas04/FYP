@@ -4,12 +4,15 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.os.Handler;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.fyp_app.R;
@@ -36,7 +39,7 @@ import org.jetbrains.annotations.Nullable;
 public final class Breath extends AppCompatActivity {
     public SharedPref pref;
     private HashMap _$_findViewCache;
-
+    int time = 59;
     @NotNull
     public final SharedPref getPref() {
         SharedPref var10000 = this.pref;
@@ -53,11 +56,13 @@ public final class Breath extends AppCompatActivity {
     }
 
     protected void onCreate(@Nullable Bundle savedInstanceState) {
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.hide();
         super.onCreate(savedInstanceState);
         this.setContentView(R.layout.activity_breath);
         this.pref = new SharedPref((Activity)this);
         TextView var10000 = (TextView)this._$_findCachedViewById(R.id.breathtoday);
-        Intrinsics.checkExpressionValueIsNotNull(var10000, "breathtoday");
+        //Intrinsics.checkExpressionValueIsNotNull(var10000, "breathtoday");
         Object[] var10002 = new Object[1];
         SharedPref var10005 = this.pref;
         if (var10005 == null) {
@@ -65,18 +70,32 @@ public final class Breath extends AppCompatActivity {
         }
 
         var10002[0] = var10005.getSessions();
-        var10000.setText((CharSequence)MessageFormat.format("{0} minutes today", var10002));
-        var10000 = (TextView)this._$_findCachedViewById(R.id.lasttimeused);
-        Intrinsics.checkExpressionValueIsNotNull(var10000, "lasttimeused");
+       // var10000.setText((CharSequence)MessageFormat.format("{0} minutes today", var10002));
+        //var10000 = (TextView)this._$_findCachedViewById(R.id.lasttimeused);
+       // Intrinsics.checkExpressionValueIsNotNull(var10000, "lasttimeused");
         SharedPref var10001 = this.pref;
         if (var10001 == null) {
             Intrinsics.throwUninitializedPropertyAccessException("pref");
         }
 
-        var10000.setText((CharSequence)var10001.getDate());
+        //var10000.setText((CharSequence)var10001.getDate());
         ((Button)this._$_findCachedViewById(R.id.startbtn)).setOnClickListener((OnClickListener)(new OnClickListener() {
             public final void onClick(View it) {
                 Breath.this.animationstart();
+                TextView text = (TextView)findViewById(R.id.breathtoday);
+                new CountDownTimer(60000,1000) {
+                    @Override
+                    public void onTick(long millisUntilFinished) {
+                        text.setText(Integer.toString(time));
+                        time--;
+                    }
+
+                    @Override
+                    public void onFinish() {
+                        startActivity(new Intent((Context)Breath.this, LivePreviewActivity.class));
+                        finish();
+                    }
+                }.start();
             }
         }));
     }
@@ -88,17 +107,17 @@ public final class Breath extends AppCompatActivity {
                 Intrinsics.checkExpressionValueIsNotNull(var10000, "breathtxt");
                 var10000.setText((CharSequence)"Inhale........ Exhale");
             }
-        })).thenAnimate(new View[]{(View)((ImageView)this._$_findCachedViewById(R.id.flower))}).scale(new float[]{0.02F, 1.5F, 0.02F}).rotation(new float[]{360.0F}).repeatCount(10).accelerate().duration(5000L).onStop((Stop)(new Stop() {
+        })).thenAnimate(new View[]{(View)((ImageView)this._$_findCachedViewById(R.id.flower))}).scale(new float[]{0, 1.5F, 0}).rotation(new float[]{360.0F}).repeatCount(10).accelerate().duration(5500).onStop((Stop)(new Stop() {
             public final void onStop() {
                 TextView var10000 = (TextView)Breath.this._$_findCachedViewById(R.id.breathtxt);
                 Intrinsics.checkExpressionValueIsNotNull(var10000, "breathtxt");
                 var10000.setText((CharSequence)"Great");
                 ImageView var3 = (ImageView)Breath.this._$_findCachedViewById(R.id.flower);
                 Intrinsics.checkExpressionValueIsNotNull(var3, "flower");
-                var3.setScaleX(1.0F);
+                var3.setScaleX(0);
                 var3 = (ImageView)Breath.this._$_findCachedViewById(R.id.flower);
                 Intrinsics.checkExpressionValueIsNotNull(var3, "flower");
-                var3.setScaleY(1.0F);
+                var3.setScaleY(0);
                 Breath.this.getPref().setSessions(Breath.this.getPref().getSessions() + 1);
                 Breath.this.getPref().setDate(System.currentTimeMillis());
                 Handler handler = new Handler();
@@ -108,7 +127,7 @@ public final class Breath extends AppCompatActivity {
                         Breath.this.finish();
                     }
                 });
-                handler.postDelayed(countDownTimer, 2000L);
+                //handler.postDelayed(countDownTimer, 2000L);
             }
         })).start();
     }

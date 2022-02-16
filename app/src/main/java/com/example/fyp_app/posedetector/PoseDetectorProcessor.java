@@ -16,11 +16,13 @@
 
 package com.example.fyp_app.posedetector;
 
+import android.app.Activity;
 import android.content.Context;
 import androidx.annotation.NonNull;
 
 import android.speech.tts.TextToSpeech;
 import android.util.Log;
+import android.webkit.WebView;
 
 import com.example.fyp_app.posedetector.YogaProgramBeginner;
 import com.google.android.gms.tasks.Task;
@@ -54,6 +56,8 @@ public class PoseDetectorProcessor
   private final Executor classificationExecutor;
   TextToSpeech t1;
   YogaProgramBeginner yogaProgramBeginner;
+  WebView view;
+  Activity activity;
 
   private PoseClassifierProcessor poseClassifierProcessor;
   /** Internal class to hold Pose and classification results. */
@@ -84,7 +88,7 @@ public class PoseDetectorProcessor
           boolean runClassification,
           boolean isStreamMode,
           TextToSpeech t1,
-          YogaProgramBeginner yogaProgramBeginner) {
+          YogaProgramBeginner yogaProgramBeginner, WebView view,Activity activity) {
     super(context);
     this.showInFrameLikelihood = showInFrameLikelihood;
     this.visualizeZ = visualizeZ;
@@ -96,6 +100,8 @@ public class PoseDetectorProcessor
     classificationExecutor = Executors.newSingleThreadExecutor();
     this.t1 = t1;
     this.yogaProgramBeginner = yogaProgramBeginner;
+    this.view = view;
+    this.activity = activity;
   }
 
   @Override
@@ -155,7 +161,10 @@ public class PoseDetectorProcessor
             rescaleZForVisualization,
             poseWithClassification.classificationResult,
                 t1,
-                yogaProgramBeginner)); // Speech
+                yogaProgramBeginner,
+                view,
+                activity
+                )); // Speech
   }
 
   @Override

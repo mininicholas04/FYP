@@ -37,7 +37,6 @@ public class EntryChoiceActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), LivePreviewActivity.class);
                 startActivity(intent);
-                finish();
             }
         });
     }

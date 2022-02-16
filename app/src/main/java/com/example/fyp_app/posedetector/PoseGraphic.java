@@ -8,6 +8,8 @@ import static java.lang.Math.min;
 import static java.lang.Math.sqrt;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -18,11 +20,16 @@ import android.os.Build;
 import android.os.CountDownTimer;
 import android.speech.tts.TextToSpeech;
 import android.util.Log;
+import android.webkit.WebView;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
+import com.example.fyp_app.Breath;
+import com.example.fyp_app.BreathCompleted;
+import com.example.fyp_app.LivePreviewActivity;
+import com.example.fyp_app.R;
 import com.example.fyp_app.posedetector.YogaPose;
 import com.example.fyp_app.posedetector.YogaProgramBeginner;
 import com.google.android.gms.common.api.Api;
@@ -57,6 +64,8 @@ public class PoseGraphic extends Graphic {
   YogaProgramBeginner yogaProgramBeginner;
   private List<YogaPose> yogaArray = new ArrayList<YogaPose>();
   CountDownTimer timer;
+  WebView view ;
+  Activity activity;
 
   private final List<String> poseClassification;
   private final Paint classificationTextPaint;
@@ -66,18 +75,20 @@ public class PoseGraphic extends Graphic {
   private final Paint testpaint;
   int Left = 0 ;
   int Right = 0 ;
-  static int l = 0;
+  public static int l = 0;
   static int count = 0 ;
 
-  PoseGraphic(
-      GraphicOverlay overlay,
-      Pose pose,
-      boolean showInFrameLikelihood,
-      boolean visualizeZ,
-      boolean rescaleZForVisualization,
-      List<String> poseClassification,
-      TextToSpeech t1,
-      YogaProgramBeginner yogaProgramBeginner) {
+  public PoseGraphic(
+          GraphicOverlay overlay,
+          Pose pose,
+          boolean showInFrameLikelihood,
+          boolean visualizeZ,
+          boolean rescaleZForVisualization,
+          List<String> poseClassification,
+          TextToSpeech t1,
+          YogaProgramBeginner yogaProgramBeginner,
+          WebView view,
+          Activity activity) {
     super(overlay);
     this.pose = pose;
     this.showInFrameLikelihood = showInFrameLikelihood;
@@ -85,6 +96,8 @@ public class PoseGraphic extends Graphic {
     this.rescaleZForVisualization = rescaleZForVisualization;
     this.t1 = t1;
     this.yogaProgramBeginner = yogaProgramBeginner;
+    this.view = view;
+    this.activity = activity;
 
 
     this.poseClassification = poseClassification;
@@ -107,14 +120,15 @@ public class PoseGraphic extends Graphic {
     rightPaint.setStrokeWidth(STROKE_WIDTH);
     rightPaint.setColor(Color.GREEN);
   }
-  @Override
+
+    @Override
   public void draw(Canvas canvas) {
       List<PoseLandmark> landmarks = pose.getAllPoseLandmarks();
       if (landmarks.isEmpty()) {
         return;
       }
       if(l == 2){
-          Intent intent = new Intent(getApplicationContext(), YogaCompletedActivity.class);
+          Intent intent = new Intent(getApplicationContext(), BreathCompleted.class);
           intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
           getApplicationContext().startActivity(intent);
       }
@@ -222,7 +236,6 @@ public class PoseGraphic extends Graphic {
               drawArcRight(canvas, pose.getPoseLandmark(firstjoint2), pose.getPoseLandmark(secondjoint2), pose.getPoseLandmark(thirdjoint2), rightPaint, Right);
               timer =  new CountDownTimer(1000, 1000) {
 
-                  @SuppressLint("RestrictedApi")
                   public void onTick(long millisUntilFinished) {
                       if(Left>=angle1 && angle1+30 >= Left && Right >= angle2 && angle2+30 >= Right) {
                           count ++ ;
@@ -233,6 +246,12 @@ public class PoseGraphic extends Graphic {
                           if(count ==200 ){
                               if(l < yogaArray.size()){
                               l++;
+                                  activity.runOnUiThread(new Runnable(){
+                                      @Override
+                                      public void run() {
+                                          view.loadUrl("file:///android_asset/yogapose"+l+".jpg");
+                                      }
+                                  });
                               }
                           }
                           Log.v("Cancel ", count+"");
@@ -301,23 +320,6 @@ public class PoseGraphic extends Graphic {
       //}
       //}).start();
     };
-    void check(int angle) throws InterruptedException {
-    if(!t1.isSpeaking()){
-      if( 180 >= angle && angle >= 165){
-        t1.speak("Perfect, Hold For 5 seconds", TextToSpeech.QUEUE_FLUSH, null,null);
-        t1.playSilentUtterance(3000,TextToSpeech.QUEUE_ADD,null);
-      }
-      else if(164>=angle && angle >= 100){
-        t1.speak("good", TextToSpeech.QUEUE_FLUSH, null,null);
-        t1.playSilentUtterance(3000,TextToSpeech.QUEUE_ADD,null);
-      }
-      else{
-        t1.speak("lift up your arms", TextToSpeech.QUEUE_FLUSH, null,null);
-        t1.playSilentUtterance(3000,TextToSpeech.QUEUE_ADD,null);
-      }
-    }
-  }
-
 
   static int getAngle(PoseLandmark firstPoint, PoseLandmark midPoint, PoseLandmark lastPoint) {
     double result =

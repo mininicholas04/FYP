@@ -5,62 +5,73 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/black"
+    android:background="@color/gray"
     tools:context=".Breath">
 
 
-    <ImageView
-        android:id="@+id/flower"
-        android:layout_width="210dp"
-        android:layout_height="180dp"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:layout_marginTop="140dp"
-
-        app:layout_constraintBottom_toTopOf="@+id/startbtn"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lasttimeused"
-        app:layout_constraintVertical_bias="0.0"></ImageView>
-
-    <TextView
-        android:id="@+id/lasttimeused"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="124dp"
-        android:text="last Used at 12:30 PM"
-        android:textColor="@color/colorAccent"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.125"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <!--<TextView
+       android:id="@+id/lasttimeused"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_marginTop="128dp"
+       android:text="last Used at 12:30 PM"
+       android:textColor="@color/colorAccent"
+       android:textSize="20sp"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintHorizontal_bias="0.071"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toTopOf="parent" />-->
 
     <TextView
         android:id="@+id/breathtoday"
-        android:layout_width="174dp"
+        style="@android:style/TextAppearance.Large"
+        android:layout_width="wrap_content"
         android:layout_height="35dp"
-        android:layout_marginTop="56dp"
-        android:text="10 Minutes Today"
+        android:layout_marginTop="36dp"
+        android:text="60"
         android:textColor="@color/colorAccent"
         android:textSize="20sp"
-        style="@android:style/TextAppearance.Large"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.107"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src="@drawable/yoga_meditation"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.499"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.393" />
+
     <Button
         android:id="@+id/startbtn"
-        android:layout_width="358dp"
-        android:layout_height="57dp"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
         android:layout_marginBottom="16dp"
         android:text="Start"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.49"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="@drawable/roundedbutton"/>
+
+    <ImageView
+        android:id="@+id/flower"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:alpha=".5"
+        android:background="@drawable/breath"
+        app:layout_constraintBottom_toTopOf="@+id/startbtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.76"></ImageView>
 
     <TextView
         android:id="@+id/breathtxt"
@@ -69,12 +80,11 @@
         android:text="Breathe"
         android:textColor="@color/colorAccent"
         android:textSize="25sp"
-        app:layout_constraintBottom_toTopOf="@+id/startbtn"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/flower"
-        app:layout_constraintVertical_bias="0.697" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/flower"
+        app:layout_constraintStart_toStartOf="@+id/flower"
+        app:layout_constraintTop_toTopOf="@+id/flower"
+        app:layout_constraintVertical_bias="0.735" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

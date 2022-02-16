@@ -68,7 +68,7 @@ public class TiltingActivity extends AppCompatActivity implements SensorEventLis
                         }
                         if(pass){
                             Log.v("aaaaaaaaaaaaaa","passsssssssssssssss");
-                            startActivity(new Intent(TiltingActivity.this,LivePreviewActivity.class));
+                            startActivity(new Intent(TiltingActivity.this,Breath.class));
                             finish();
                             break;
                     }
