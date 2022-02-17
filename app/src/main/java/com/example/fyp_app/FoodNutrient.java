@@ -28,9 +28,9 @@ public class FoodNutrient extends AppCompatActivity {
     TextView nutri;
     TextView nutri_descri;
 
-    private String Nutrition = "Vitamin C";
+    private String Nutrition = "Vitamin A";
     private String NutritionDescri = " Vitamins are organic compounds that\n peopleneed in small quantities.\n Most vitamins need to come from food.";
-    private String url = "https://api.spoonacular.com/recipes/findByNutrients?minVitaminC=10&number=10&random=true&apiKey=7ed522da19374c0f8aba43afd5c3aaba";
+    private String url = "https://api.spoonacular.com/recipes/findByNutrients?minVitaminA=10&number=10&random=true&apiKey=7ed522da19374c0f8aba43afd5c3aaba";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,7 +68,7 @@ public class FoodNutrient extends AppCompatActivity {
 
                 Collections.sort(jsonValues, new Comparator<JSONObject>() {
                     // You can change "Name" with "ID" if you want to sort by ID
-                    private static final String KEY_NAME = "vitaminC";
+                    private static final String KEY_NAME = "vitaminA";
 
                     @Override
                     public int compare(JSONObject a, JSONObject b) {
@@ -76,8 +76,8 @@ public class FoodNutrient extends AppCompatActivity {
                         String valB = new String();
 
                         try {
-                            valA = ((String) a.get(KEY_NAME)).replaceAll("mg", "");
-                            valB = ((String) b.get(KEY_NAME)).replaceAll("mg", "");
+                            valA = ((String) a.get(KEY_NAME)).replaceAll("IU", "");
+                            valB = ((String) b.get(KEY_NAME)).replaceAll("IU", "");
                         } catch (JSONException e) {
 
                         }
