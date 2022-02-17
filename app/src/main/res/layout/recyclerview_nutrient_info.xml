@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/recyclerview_layout_nutrient">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginBottom="30dp"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="0dp"
+        app:cardBackgroundColor="#e8e7fe">
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="10dp"
+            android:stretchColumns="1">
+
+            <TableRow>
+                <TextView
+                    android:id="@+id/foodNutrientName"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="none"
+                    android:maxLines="2"
+                    android:scrollHorizontally="false"
+                    android:singleLine="false"
+                    android:text="Name"/>
+
+                <TextView
+                    android:id="@+id/foodNutrientGram"
+                    android:layout_width="90dp"
+                    android:layout_height="wrap_content"
+                    android:text="per serving"
+                    android:textAlignment="center" />
+            </TableRow>
+        </TableLayout>
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>
