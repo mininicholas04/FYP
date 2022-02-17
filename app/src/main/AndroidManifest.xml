@@ -65,7 +65,13 @@
             android:exported="true"
             android:screenOrientation="landscape"
             android:theme="@style/Theme.Fyp_app" />
+
+        <activity
+            android:name=".FoodNutrientInfoActivity"/>
+        <activity
+            android:name=".FoodNutrient"/>
     </application>
+
 
 
 </manifest>

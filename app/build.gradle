@@ -166,6 +166,9 @@ dependencies {
     //implementation 'com.github.florent37:viewanimator:1.0.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
+    //nutrient get picture
+    implementation 'com.squareup.picasso:picasso:2.5.2'
+
 }
 configurations {
     // Resolves dependency conflict caused by some dependencies use
