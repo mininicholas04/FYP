@@ -17,17 +17,17 @@ public class YogaPose {
         this.Speech = speech;
     }
 
-    public static HashMap addBodyPart(int firstJoint1, int secondJoint1, int thirdJoint1, int angle1 , int firstJoint2, int secondJoint2 , int thirdJoint2, int angle2 ){
+    public static HashMap addBodyPart(int leftElbowAngle, int leftShoulderAngle, int leftHipAngle, int leftKneeAngle , int rightElbowAngle, int rightShoulderAngle , int rightHipAngle, int rightKneeAngle ){
         HashMap<String, Integer> BodyPart = new HashMap();
 
-        BodyPart.put("firstjoint1", firstJoint1);
-        BodyPart.put("secondjoint1", secondJoint1);
-        BodyPart.put("thirdjoint1", thirdJoint1);
-        BodyPart.put("angle1", angle1);
-        BodyPart.put("firstjoint2", firstJoint2);
-        BodyPart.put("secondjoint2", secondJoint2);
-        BodyPart.put("thirdjoint2", thirdJoint2);
-        BodyPart.put("angle2", angle2);
+        BodyPart.put("leftElbowAngle", leftElbowAngle);
+        BodyPart.put("leftShoulderAngle", leftShoulderAngle);
+        BodyPart.put("leftHipAngle", leftHipAngle);
+        BodyPart.put("leftKneeAngle", leftKneeAngle);
+        BodyPart.put("rightElbowAngle", rightElbowAngle);
+        BodyPart.put("rightShoulderAngle", rightShoulderAngle);
+        BodyPart.put("rightHipAngle", rightHipAngle);
+        BodyPart.put("rightKneeAngle", rightKneeAngle);
 
         return BodyPart;
     }

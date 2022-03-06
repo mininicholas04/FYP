@@ -9,7 +9,7 @@ android {
     defaultConfig {
         applicationId "com.example.fyp_app"
         minSdkVersion 24
-        targetSdkVersion 31
+        targetSdkVersion 28
         multiDexEnabled true
 
         versionCode 1
