@@ -68,7 +68,7 @@ public class PoseGraphic extends Graphic {
   WebView view ;
   Activity activity;
   TextView yogaCount;
-  static int yogacount = 600;
+  static int yogacount = 1500;
 
   private final List<String> poseClassification;
   private final Paint classificationTextPaint;
@@ -159,7 +159,17 @@ public class PoseGraphic extends Graphic {
                 landmark == pose.getPoseLandmark(PoseLandmark.LEFT_EAR) ||
                 landmark == pose.getPoseLandmark(PoseLandmark.RIGHT_EAR) ||
                 landmark == pose.getPoseLandmark(PoseLandmark.LEFT_MOUTH) ||
-                landmark == pose.getPoseLandmark(PoseLandmark.RIGHT_MOUTH)
+                landmark == pose.getPoseLandmark(PoseLandmark.RIGHT_MOUTH)||
+                landmark == pose.getPoseLandmark(PoseLandmark.LEFT_INDEX)||
+                landmark == pose.getPoseLandmark(PoseLandmark.RIGHT_INDEX)||
+                landmark == pose.getPoseLandmark(PoseLandmark.LEFT_FOOT_INDEX)||
+                landmark == pose.getPoseLandmark(PoseLandmark.RIGHT_FOOT_INDEX)||
+                landmark == pose.getPoseLandmark(PoseLandmark.LEFT_PINKY)||
+                landmark == pose.getPoseLandmark(PoseLandmark.RIGHT_PINKY)||
+                landmark == pose.getPoseLandmark(PoseLandmark.RIGHT_THUMB)||
+                landmark == pose.getPoseLandmark(PoseLandmark.LEFT_THUMB)||
+                landmark == pose.getPoseLandmark(PoseLandmark.LEFT_HEEL)||
+                landmark == pose.getPoseLandmark(PoseLandmark.RIGHT_HEEL)
         ) {
           drawPoint(canvas, landmark, testpaint);
         } else {
@@ -213,41 +223,112 @@ public class PoseGraphic extends Graphic {
       PoseLandmark leftFootIndex = pose.getPoseLandmark(PoseLandmark.LEFT_FOOT_INDEX);
       PoseLandmark rightFootIndex = pose.getPoseLandmark(PoseLandmark.RIGHT_FOOT_INDEX);
 
+        drawLine(canvas, leftShoulder, leftElbow, whitePaint);
+        drawLine(canvas, leftElbow, leftWrist, whitePaint);
+        drawLine(canvas, leftShoulder, leftHip, whitePaint);
+        drawLine(canvas, leftHip, leftKnee, whitePaint);
+        drawLine(canvas, leftKnee, leftAnkle, whitePaint);
+
+        // Right body
+        drawLine(canvas, rightShoulder, rightElbow, whitePaint);
+        drawLine(canvas, rightElbow, rightWrist, whitePaint);
+        drawLine(canvas, rightShoulder, rightHip, whitePaint);
+        drawLine(canvas, rightHip, rightKnee, whitePaint);
+        drawLine(canvas, rightKnee, rightAnkle, whitePaint);
       yogaArray = yogaProgramBeginner.getProgram();
       Log.v("Test " , l + "");
       YogaPose yoga = yogaArray.get(l);
       Log.v("Test 1" , l + "");
-      int firstjoint1 = (int)yoga.getBodyPart().get("firstjoint1");
-      int secondjoint1 =(int) yoga.getBodyPart().get("secondjoint1");
-      int thirdjoint1 = (int)yoga.getBodyPart().get("thirdjoint1");
-      int angle1 = (int)yoga.getBodyPart().get("angle1");
+      int leftElbowAngle= (int)yoga.getBodyPart().get("leftElbowAngle");
+      int leftShoulderAngle =(int) yoga.getBodyPart().get("leftShoulderAngle");
+      int leftHipAngle = (int)yoga.getBodyPart().get("leftHipAngle");
+      int leftKneeAngle = (int)yoga.getBodyPart().get("leftKneeAngle");
 
-      int firstjoint2 = (int)yoga.getBodyPart().get("firstjoint2");
-      int secondjoint2 =(int) yoga.getBodyPart().get("secondjoint2");
-      int thirdjoint2 = (int)yoga.getBodyPart().get("thirdjoint2");
-      int angle2 = (int)yoga.getBodyPart().get("angle2");
+      int rightElbowAngle = (int)yoga.getBodyPart().get("rightElbowAngle");
+      int rightShoulderAngle =(int) yoga.getBodyPart().get("rightShoulderAngle");
+      int rightHipAngle = (int)yoga.getBodyPart().get("rightHipAngle");
+      int rightKneeAngle = (int)yoga.getBodyPart().get("rightKneeAngle");
       String good = yoga.getSpeech()[0];
       String perfect = yoga.getSpeech()[1];
 
-      Left = getAngle(pose.getPoseLandmark(firstjoint1), pose.getPoseLandmark(secondjoint1), pose.getPoseLandmark(thirdjoint1));
-      Right = getAngle(pose.getPoseLandmark(firstjoint2), pose.getPoseLandmark(secondjoint2), pose.getPoseLandmark(thirdjoint2));
+      int[] bodyAngle = {leftElbowAngle,leftShoulderAngle,leftHipAngle,leftKneeAngle,rightElbowAngle,rightShoulderAngle,rightHipAngle,rightKneeAngle};
 
+      int realLeftElbowAngle = getAngle(leftWrist, leftElbow, leftShoulder);
+      int realLeftShoulderAngle = getAngle(leftElbow, leftShoulder, leftHip);
+      int realLeftHipAngle = getAngle(leftShoulder, leftHip, leftKnee);
+      int realLeftKneeAngle = getAngle(leftHip, leftKnee, leftAnkle);
 
-      if(l < yogaArray.size()){
-          if(Left>=angle1 && angle1+30 >= Left && Right >= angle2 && angle2+30 >= Right){
-              drawArcLeft(canvas, pose.getPoseLandmark(firstjoint1), pose.getPoseLandmark(secondjoint1), pose.getPoseLandmark(thirdjoint1), leftPaint, Left);
-              drawArcRight(canvas, pose.getPoseLandmark(firstjoint2), pose.getPoseLandmark(secondjoint2), pose.getPoseLandmark(thirdjoint2), rightPaint, Right);
+      int realRightElbowAngle = getAngle(rightWrist, rightElbow, rightShoulder);
+      int realRightShoulderAngle = getAngle(rightElbow, rightShoulder, rightHip);
+      int realRightHipAngle = getAngle(rightShoulder, rightHip, rightKnee);
+      int realRightKneeAngle = getAngle(rightHip, rightKnee, rightAnkle);
+
+      int[] realBodyAngle = {realLeftElbowAngle,realLeftShoulderAngle,realLeftHipAngle,realLeftKneeAngle,realRightElbowAngle,realRightShoulderAngle,realRightHipAngle,realRightKneeAngle};
+      Log.v("Left ",realLeftElbowAngle+"leftShoulderAngle"+realLeftShoulderAngle+"leftHipAngle"+realLeftHipAngle+"leftKneeAngle"+realLeftKneeAngle+"");
+      Log.v("Right ",realRightElbowAngle+"rightShoulderAngle"+realRightShoulderAngle+"rightHipAngle"+realRightHipAngle+"rightKneeAngle"+realRightKneeAngle+"");
+        if(l < yogaArray.size()){
+          for(int i=0; i<bodyAngle.length;i++){
+              if(realBodyAngle[i] >= bodyAngle[i] && bodyAngle[i] +20 >= realBodyAngle[i]) {
+                  leftPaint.setColor(Color.GREEN);
+              }
+              else{
+                  leftPaint.setColor(Color.RED);
+              }
+                switch (i){
+                    case 0:
+                        drawLine(canvas, leftWrist, leftElbow, leftPaint);
+                        drawLine(canvas, leftElbow, leftShoulder, leftPaint);
+                        break;
+                    case 1:
+                        drawLine(canvas, leftElbow, leftShoulder, leftPaint);
+                        drawLine(canvas, leftShoulder, leftHip, leftPaint);
+                        break;
+                    case 2:
+                        drawLine(canvas, leftShoulder, leftHip, leftPaint);
+                        drawLine(canvas, leftHip, leftKnee, leftPaint);
+                        break;
+                    case 3:
+                        drawLine(canvas, leftHip, leftKnee, leftPaint);
+                        drawLine(canvas, leftKnee, leftAnkle, leftPaint);
+                        break;
+                    case 4:
+                        drawLine(canvas, rightWrist, rightElbow, leftPaint);
+                        drawLine(canvas, rightElbow, rightShoulder, leftPaint);
+                        break;
+                    case 5:
+                        drawLine(canvas, rightElbow, rightShoulder, leftPaint);
+                        drawLine(canvas, rightShoulder, rightHip, leftPaint);
+                        break;
+                    case 6:
+                        drawLine(canvas, rightShoulder, rightHip, leftPaint);
+                        drawLine(canvas, rightHip, rightKnee, leftPaint);
+                        break;
+                    case 7:
+                        drawLine(canvas, rightHip, rightKnee, leftPaint);
+                        drawLine(canvas, rightKnee, rightAnkle, leftPaint);
+                        break;
+                    default:
+                }
+
               timer =  new CountDownTimer(1000, 1000) {
 
                   public void onTick(long millisUntilFinished) {
-                      if(Left>=angle1 && angle1+30 >= Left && Right >= angle2 && angle2+30 >= Right) {
+                      if(realLeftElbowAngle>=leftElbowAngle && leftElbowAngle+20 >= realLeftElbowAngle &&
+                              realLeftShoulderAngle>=leftShoulderAngle && leftShoulderAngle+20 >= realLeftShoulderAngle &&
+                              realLeftHipAngle>=leftHipAngle && leftHipAngle+20 >= realLeftHipAngle &&
+                              realLeftKneeAngle>=leftKneeAngle && leftKneeAngle+20 >= realLeftKneeAngle&&
+
+                              realRightElbowAngle>=rightElbowAngle && rightElbowAngle+20 >= realRightElbowAngle &&
+                              realRightShoulderAngle>=rightShoulderAngle && rightShoulderAngle+20 >= realRightShoulderAngle &&
+                              realRightHipAngle>=rightHipAngle && rightHipAngle+20 >= realRightHipAngle &&
+                              realRightKneeAngle>=rightKneeAngle && rightKneeAngle+20 >= realRightKneeAngle) {
                           count ++ ;
 
                           yogaCount = activity.findViewById(R.id.yogaCount);
                           activity.runOnUiThread(new Runnable(){
                               @Override
                               public void run() {
-                                  yogaCount.setText(Integer.toString((int) Math.ceil(yogacount/10)));
+                                  yogaCount.setText(Integer.toString((int) Math.ceil(yogacount/100)));
                               }
                           });
                           yogacount--;
@@ -255,9 +336,11 @@ public class PoseGraphic extends Graphic {
                               t1.speak(perfect, TextToSpeech.QUEUE_FLUSH, null,null);
                               t1.playSilentUtterance(4000,TextToSpeech.QUEUE_ADD,null);
                           }
-                          if(count ==600 ){
+                          if(count ==1500 ){
                               if(l < yogaArray.size()){
                               l++;
+                                  count = 0;
+                                  yogacount = 1500;
                                   activity.runOnUiThread(new Runnable(){
                                       @Override
                                       public void run() {
@@ -271,7 +354,11 @@ public class PoseGraphic extends Graphic {
                       }
                       else{
                           count = 0 ;
-                          yogacount=600;
+                          yogacount=1500;
+                          if(!t1.isSpeaking()){
+                              t1.speak(good, TextToSpeech.QUEUE_FLUSH, null,null);
+                              t1.playSilentUtterance(4000,TextToSpeech.QUEUE_ADD,null);
+                          }
                       }
                   }
 
@@ -288,37 +375,24 @@ public class PoseGraphic extends Graphic {
               }.start();
 
           }
-          else if(Left>=angle1 && angle1+30 >= Left && Right <= angle2){
+         /* else if(Left>=angle1 && angle1+30 >= Left && Right <= angle2){
               leftPaint.setColor(Color.GREEN);
               rightPaint.setColor(Color.RED);
-              drawArcLeft(canvas, pose.getPoseLandmark(firstjoint1), pose.getPoseLandmark(secondjoint1), pose.getPoseLandmark(thirdjoint1), leftPaint, Left);
-              drawArcRight(canvas, pose.getPoseLandmark(firstjoint2), pose.getPoseLandmark(secondjoint2), pose.getPoseLandmark(thirdjoint2), rightPaint, Right);
+             // drawLine(canvas, pose.getPoseLandmark(firstjoint1), pose.getPoseLandmark(secondjoint1), pose.getPoseLandmark(thirdjoint1), leftPaint);
+             // drawLine(canvas, pose.getPoseLandmark(firstjoint2), pose.getPoseLandmark(secondjoint2), pose.getPoseLandmark(thirdjoint2), rightPaint);
               count =0 ;
               yogacount=600;
           }
           else if(angle1>= Left && Right >= angle2 && angle2+30 > Right){
               leftPaint.setColor(Color.RED);
               rightPaint.setColor(Color.GREEN);
-              drawArcLeft(canvas, pose.getPoseLandmark(firstjoint1), pose.getPoseLandmark(secondjoint1), pose.getPoseLandmark(thirdjoint1), leftPaint, Left);
-              drawArcRight(canvas, pose.getPoseLandmark(firstjoint2), pose.getPoseLandmark(secondjoint2), pose.getPoseLandmark(thirdjoint2), rightPaint, Right);
+             // drawLine(canvas, pose.getPoseLandmark(firstjoint1), pose.getPoseLandmark(secondjoint1), pose.getPoseLandmark(thirdjoint1), leftPaint);
+             // drawLine(canvas, pose.getPoseLandmark(firstjoint2), pose.getPoseLandmark(secondjoint2), pose.getPoseLandmark(thirdjoint2), rightPaint);
               count =0 ;
               yogacount=600;
           }
-          else {
-              leftPaint.setColor(Color.RED);
-              rightPaint.setColor(Color.RED);
-              drawArcLeft(canvas, pose.getPoseLandmark(firstjoint1), pose.getPoseLandmark(secondjoint1), pose.getPoseLandmark(thirdjoint1), leftPaint, Left);
-              drawArcRight(canvas, pose.getPoseLandmark(firstjoint2), pose.getPoseLandmark(secondjoint2), pose.getPoseLandmark(thirdjoint2), rightPaint, Right);
-              if(!t1.isSpeaking()){
-                  t1.speak(good, TextToSpeech.QUEUE_FLUSH, null,null);
-                  t1.playSilentUtterance(4000,TextToSpeech.QUEUE_ADD,null);
-              }
-              count =0 ;
-              yogacount=600;
 
-          }
-
-              Log.v("Angle " , angle1 +""+ angle2 + "");
+          */
               Log.v("Left Right " , Left +""+ Right + "");
               Log.v("Test 3" , l +"");
           }
@@ -358,9 +432,10 @@ public class PoseGraphic extends Graphic {
     canvas.drawCircle(translateX(point.getX()), translateY(point.getY()), DOT_RADIUS, paint);
   }
 
-  void drawLine(Canvas canvas, PoseLandmark startLandmark, PoseLandmark endLandmark, Paint paint) {
+  void drawLine(Canvas canvas, PoseLandmark startLandmark,PoseLandmark endLandmark, Paint paint) {
     PointF3D start = startLandmark.getPosition3D();
     PointF3D end = endLandmark.getPosition3D();
+
 
     // Gets average z for the current body line
     float avgZInImagePixel = (start.getZ() + end.getZ()) / 2;

@@ -45,10 +45,10 @@ import java.util.List;
  */
 public class CameraSource {
   @SuppressLint("InlinedApi")
-  public static final int CAMERA_FACING_BACK = CameraInfo.CAMERA_FACING_BACK;
+  public static final int CAMERA_FACING_BACK = 0;
 
   @SuppressLint("InlinedApi")
-  public static final int CAMERA_FACING_FRONT = CameraInfo.CAMERA_FACING_FRONT;
+  public static final int CAMERA_FACING_FRONT = 1;
 
   public static final int IMAGE_FORMAT = ImageFormat.NV21;
   public static final int DEFAULT_REQUESTED_CAMERA_PREVIEW_WIDTH = 480;

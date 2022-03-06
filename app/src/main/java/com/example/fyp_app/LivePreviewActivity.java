@@ -55,7 +55,7 @@ public final class LivePreviewActivity extends AppCompatActivity
   private CameraSourcePreview preview;
   private GraphicOverlay graphicOverlay;
   private String selectedModel = POSE_DETECTION;
-  TextToSpeech t1;
+  private TextToSpeech t1;
   WebView view ;
   private YogaProgramBeginner yogaProgramBeginner;
   Activity activity;
@@ -111,6 +111,7 @@ public final class LivePreviewActivity extends AppCompatActivity
       public void onInit(int status) {
         if(status != TextToSpeech.ERROR) {
           t1.setLanguage(Locale.UK);
+          Log.v("Speech","success");
         }
       }
     });
