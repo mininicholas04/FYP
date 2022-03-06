@@ -7,7 +7,7 @@
         <entry key="..\:/Users/B/Downloads/FYP/FYP/app/src/main/res/layout/activity_entry_choice.xml" value="0.2957427536231884" />
         <entry key="..\:/Users/B/Downloads/FYP/FYP/app/src/main/res/layout/activity_login.xml" value="0.2957427536231884" />
         <entry key="..\:/Users/B/Downloads/FYP/FYP/app/src/main/res/layout/activity_main.xml" value="0.2957427536231884" />
-        <entry key="..\:/Users/B/Downloads/FYP/FYP/app/src/main/res/layout/activity_nutrient.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/B/Downloads/FYP/FYP/app/src/main/res/layout/activity_nutrient.xml" value="0.1" />
         <entry key="..\:/Users/B/Downloads/FYP/FYP/app/src/main/res/layout/activity_scanfood.xml" value="0.2957427536231884" />
         <entry key="..\:/Users/B/Downloads/FYP/FYP/app/src/main/res/layout/activity_tilting.xml" value="0.2957427536231884" />
         <entry key="..\:/Users/B/Downloads/FYP/FYP/app/src/main/res/layout/activity_turn_on_notifi.xml" value="0.2957427536231884" />
@@ -30,6 +30,20 @@
         <entry key="..\:/Users/B/Downloads/FYP/FYP/app/src/main/res/layout/training_3.xml" value="0.2957427536231884" />
         <entry key="..\:/Users/B/Downloads/FYP/FYP/app/src/main/res/layout/training_4.xml" value="0.2957427536231884" />
         <entry key="..\:/Users/B/Downloads/FYP/FYP/app/src/main/res/layout/training_5.xml" value="0.2957427536231884" />
+        <entry key="..\:/Users/Iris/Downloads/FYP3/app/src/main/res/drawable-v24/food_icon.xml" value="0.1" />
+        <entry key="..\:/Users/Iris/Downloads/FYP3/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/Iris/Downloads/FYP3/app/src/main/res/layout/activity_nutrient.xml" value="0.1" />
+        <entry key="..\:/Users/Iris/Downloads/FYP3/app/src/main/res/layout/activity_scanfood.xml" value="0.1640625" />
+        <entry key="..\:/Users/Iris/Downloads/FYP3/app/src/main/res/layout/dashboard.xml" value="0.1" />
+        <entry key="..\:/Users/Iris/Downloads/FYP3/app/src/main/res/layout/food_nutrient_info.xml" value="0.10520833333333333" />
+        <entry key="..\:/Users/Iris/Downloads/FYP3/app/src/main/res/layout/fragment_dashboard.xml" value="0.1" />
+        <entry key="..\:/Users/Iris/Downloads/FYP3/app/src/main/res/layout/fragment_food.xml" value="0.1640625" />
+        <entry key="..\:/Users/Iris/Downloads/FYP3/app/src/main/res/layout/fragment_home.xml" value="0.1" />
+        <entry key="..\:/Users/Iris/Downloads/FYP3/app/src/main/res/layout/recyclerview_food.xml" value="0.1" />
+        <entry key="..\:/Users/Iris/Downloads/FYP3/app/src/main/res/layout/recyclerview_nutrient_info.xml" value="0.10520833333333333" />
+        <entry key="..\:/Users/Iris/Downloads/FYP3/app/src/main/res/layout/recyclerview_snap.xml" value="0.1" />
+        <entry key="..\:/Users/Iris/Downloads/FYP3/app/src/main/res/layout/snap_details.xml" value="0.1640625" />
+        <entry key="..\:/Users/Iris/Downloads/FYP3/app/src/main/res/menu/bottom_nav_menu.xml" value="0.1" />
         <entry key="..\:/Users/Iris/Downloads/FYP_Test2/app/src/main/res/drawable/list_item_background.xml" value="0.1" />
         <entry key="..\:/Users/Iris/Downloads/FYP_Test2/app/src/main/res/drawable/logo_mlkit.xml" value="0.1" />
         <entry key="..\:/Users/Iris/Downloads/FYP_Test2/app/src/main/res/drawable/roundedbutton.xml" value="0.1" />

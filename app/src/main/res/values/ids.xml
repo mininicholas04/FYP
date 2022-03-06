@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <item name="text_dashboard" type="id"></item>
+    <item name="snap_quan" type="id" />
+    <item name="layout1_1" type="id" />
 </resources>
