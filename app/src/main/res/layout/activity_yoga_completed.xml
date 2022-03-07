@@ -34,7 +34,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Today's Prgoram"
+                android:text="Today's Program"
                 android:layout_marginLeft="20dp"
                 android:textSize="20dp"
                 android:textColor="@color/black"/>
@@ -49,7 +49,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Relax Youyself !"
+                android:text="Relax Yourself !"
                 android:layout_marginLeft="20dp"
                 android:textSize="20dp"
                 android:textColor="@color/black"/>

@@ -51,7 +51,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="550dp"
-            android:text="Remainder for yoga!"
+            android:text="Reminder for yoga!"
             android:textSize="18sp" />
     </LinearLayout>
 
