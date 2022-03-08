@@ -130,7 +130,7 @@ public class PoseGraphic extends Graphic {
       if (landmarks.isEmpty()) {
         return;
       }
-      if(l == 2){
+      if(l == 3){
           Intent intent = new Intent(getApplicationContext(), BreathCompleted.class);
           intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
           getApplicationContext().startActivity(intent);
