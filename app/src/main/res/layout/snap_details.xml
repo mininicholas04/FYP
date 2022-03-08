@@ -1,61 +1,181 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="30dp">
+    android:fillViewport="false">
 
-    <TextView
-        android:id="@+id/snap_food"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="FoodName"
-        android:textStyle="bold"
-        android:textSize="30dp"
-        android:layout_marginTop="30dp"/>
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="30dp"
+        tools:context=".ScanFood">
 
-    <TextView
-        android:id="@+id/snap_ingred"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Ingrdients"
-        android:layout_below="@+id/snap_food"
-        android:layout_marginTop="10dp"/>
+        <TextView
+            android:id="@+id/firstline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1. Snap a picture with barcode"/>
 
-
-    <TableLayout
-        android:layout_below="@+id/snap_ingred"
-        android:id="@+id/TableLayout"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:stretchColumns="0" >
-
-        <TableRow>
-            <TextView
-                android:id="@+id/snap_nutri"
-                android:layout_width="80dp"
-                android:layout_height="wrap_content"
-                android:text="Nutrition facts"
-                android:textStyle="bold"
-                android:textAlignment="center"/>
-
-            <TextView
-                android:id="@+id/snap_100g"
-                android:layout_width="140dp"
-                android:layout_height="wrap_content"
-                android:text="Per 100 Unit Serving"
-                android:textStyle="bold" />
-
-        </TableRow>
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/snap_recyclerView"
+        <Button
+            android:id="@+id/btn_snap"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/button_roundcorner"
+            android:text="snap now"
+            android:onClick="ScanButton"
+            android:layout_marginTop="10dp"
+            android:textColor="@android:color/white"
+            android:textSize="15dp"
+            android:layout_below="@+id/firstline" />
+
+        <TextView
+            android:id="@+id/secondline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2. Nutrition fact"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/btn_snap"/>
+
+        <TextView
+            android:id="@+id/snap_food"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textStyle="bold"
+            android:textSize="30dp"
+            android:layout_below="@+id/secondline"
+            android:layout_marginTop="5dp"/>
+
+        <LinearLayout
+            android:id="@+id/layout1_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/snap_food"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Quantity: " />
+
+            <TextView
+                android:id="@+id/snap_quan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/text1_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/layout1_1"
+            android:layout_marginTop="10dp"
+            android:text="Nutrition facts: " />
+
+        <RelativeLayout
+            android:id="@+id/pic"
+            android:layout_width="300dp"
+            android:layout_height="200dp"
+            android:layout_below="@id/text1_1"
+            android:layout_marginTop="10dp">
+
+            <ImageView
+                android:id="@+id/snap_nutri"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:adjustViewBounds="true"
+                android:scaleType="centerCrop"/>
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/thirdline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3. Remind"
+            android:layout_below="@+id/pic"
             android:layout_marginTop="10dp"/>
 
-    </TableLayout>
-</RelativeLayout>
+        <TextView
+            android:id="@+id/remind"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nutrient levels"
+            android:layout_below="@+id/thirdline"
+            android:layout_marginTop="10dp"/>
+
+        <TableLayout
+            android:id="@+id/table1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/remind"
+            android:layout_marginTop="5dp">
+
+            <TableRow>
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_width="120dp"
+                    android:text="Nutrient"/>
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_width="120dp"
+                    android:text="Quantity"/>
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_width="120dp"
+                    android:text="Fat"/>
+                <TextView
+                    android:id="@+id/snap_fat"
+                    android:layout_height="wrap_content"
+                    android:layout_width="120dp"
+                    android:text=""/>
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_width="120dp"
+                    android:text="Saturated fat"/>
+                <TextView
+                    android:id="@+id/snap_safat"
+                    android:layout_height="wrap_content"
+                    android:layout_width="120dp"
+                    android:text=""/>
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_width="120dp"
+                    android:text="Sugars"/>
+                <TextView
+                    android:id="@+id/snap_sugar"
+                    android:layout_height="wrap_content"
+                    android:layout_width="120dp"
+                    android:text=""/>
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_width="120dp"
+                    android:text="Salt"/>
+                <TextView
+                    android:id="@+id/snap_salt"
+                    android:layout_height="wrap_content"
+                    android:layout_width="120dp"
+                    android:text=""/>
+            </TableRow>
+        </TableLayout>
+
+    </RelativeLayout>
+</ScrollView>
