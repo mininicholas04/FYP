@@ -55,7 +55,6 @@ public class ScanFood extends AppCompatActivity {
     public void ScanButton(View view){
         IntentIntegrator intentIntegrator = new IntentIntegrator(this);
         intentIntegrator.addExtra("SCAN_CAMERA_ID", 0);
-
         intentIntegrator.initiateScan(IntentIntegrator.PRODUCT_CODE_TYPES);
     }
 
