@@ -130,7 +130,7 @@ public class PoseGraphic extends Graphic {
       if (landmarks.isEmpty()) {
         return;
       }
-      if(l == 3){
+      if(l == 6){
           Intent intent = new Intent(getApplicationContext(), BreathCompleted.class);
           intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
           getApplicationContext().startActivity(intent);
@@ -268,7 +268,7 @@ public class PoseGraphic extends Graphic {
       Log.v("Right ",realRightElbowAngle+"rightShoulderAngle"+realRightShoulderAngle+"rightHipAngle"+realRightHipAngle+"rightKneeAngle"+realRightKneeAngle+"");
         if(l < yogaArray.size()){
           for(int i=0; i<bodyAngle.length;i++){
-              if(realBodyAngle[i] >= bodyAngle[i] && bodyAngle[i] +20 >= realBodyAngle[i]) {
+              if(realBodyAngle[i] >= bodyAngle[i] && bodyAngle[i] +40 >= realBodyAngle[i]) {
                   leftPaint.setColor(Color.GREEN);
               }
               else{
@@ -313,15 +313,15 @@ public class PoseGraphic extends Graphic {
               timer =  new CountDownTimer(1000, 1000) {
 
                   public void onTick(long millisUntilFinished) {
-                      if(realLeftElbowAngle>=leftElbowAngle && leftElbowAngle+20 >= realLeftElbowAngle &&
-                              realLeftShoulderAngle>=leftShoulderAngle && leftShoulderAngle+20 >= realLeftShoulderAngle &&
-                              realLeftHipAngle>=leftHipAngle && leftHipAngle+20 >= realLeftHipAngle &&
-                              realLeftKneeAngle>=leftKneeAngle && leftKneeAngle+20 >= realLeftKneeAngle&&
+                      if(realLeftElbowAngle>=leftElbowAngle && leftElbowAngle+40 >= realLeftElbowAngle &&
+                              realLeftShoulderAngle>=leftShoulderAngle && leftShoulderAngle+40 >= realLeftShoulderAngle &&
+                              realLeftHipAngle>=leftHipAngle && leftHipAngle+40 >= realLeftHipAngle &&
+                              realLeftKneeAngle>=leftKneeAngle && leftKneeAngle+40 >= realLeftKneeAngle&&
 
-                              realRightElbowAngle>=rightElbowAngle && rightElbowAngle+20 >= realRightElbowAngle &&
-                              realRightShoulderAngle>=rightShoulderAngle && rightShoulderAngle+20 >= realRightShoulderAngle &&
-                              realRightHipAngle>=rightHipAngle && rightHipAngle+20 >= realRightHipAngle &&
-                              realRightKneeAngle>=rightKneeAngle && rightKneeAngle+20 >= realRightKneeAngle) {
+                              realRightElbowAngle>=rightElbowAngle && rightElbowAngle+40 >= realRightElbowAngle &&
+                              realRightShoulderAngle>=rightShoulderAngle && rightShoulderAngle+40 >= realRightShoulderAngle &&
+                              realRightHipAngle>=rightHipAngle && rightHipAngle+40 >= realRightHipAngle &&
+                              realRightKneeAngle>=rightKneeAngle && rightKneeAngle+40 >= realRightKneeAngle) {
                           count ++ ;
 
                           yogaCount = activity.findViewById(R.id.yogaCount);
