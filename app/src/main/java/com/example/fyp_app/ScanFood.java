@@ -12,7 +12,6 @@ import android.widget.TextView;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
-
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -22,7 +21,6 @@ import com.android.volley.toolbox.Volley;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
 import com.squareup.picasso.Picasso;
-
 import org.json.JSONObject;
 
 public class ScanFood extends AppCompatActivity {
@@ -56,7 +54,8 @@ public class ScanFood extends AppCompatActivity {
 
     public void ScanButton(View view){
         IntentIntegrator intentIntegrator = new IntentIntegrator(this);
-        intentIntegrator.initiateScan();
+        intentIntegrator.addExtra("SCAN_CAMERA_ID", 0);
+        intentIntegrator.initiateScan(IntentIntegrator.PRODUCT_CODE_TYPES);
     }
 
     @Override
