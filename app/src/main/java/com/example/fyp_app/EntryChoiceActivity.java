@@ -45,7 +45,7 @@ public class EntryChoiceActivity extends AppCompatActivity {
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
         if (newConfig.orientation ==  Configuration.ORIENTATION_LANDSCAPE) {
-            startActivity(new Intent(this, TiltingActivity.class));       // change to landscape
+            startActivity(new Intent(this, VolumeTunning.class));       // change to landscape
             finish();
         }
     }

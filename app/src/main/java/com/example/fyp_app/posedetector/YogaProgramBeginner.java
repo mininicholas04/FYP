@@ -11,7 +11,7 @@ public class YogaProgramBeginner {
 
     public YogaProgramBeginner(){
         addYoga(new YogaPose("Namaskarasana","video",YogaPose.addBodyPart(35,17,170,170 ,35,17,170,170),new String[]{"good", "perfect"}));
-        addYoga(new YogaPose("Right Vrikshasana","video",YogaPose.addBodyPart(140,140,160,165 ,140 ,140,120,17),new String[]{"good", "perfect"}));
+        addYoga(new YogaPose("Right Vrikshasana","video",YogaPose.addBodyPart(140,140,160,165 ,140 ,140,140,17),new String[]{"good", "perfect"}));
         addYoga(new YogaPose("Left Vrikshasana","video",YogaPose.addBodyPart(150,140,120,17,150,140,160,165 ),new String[]{"good", "perfect"}));
         addYoga(new YogaPose("Left Virabhadrasana","video",YogaPose.addBodyPart(140,140,90,80,140,140,120,140 ),new String[]{"good", "perfect"}));
         //addYoga(new YogaPose("Right Virabhadrasana","video",YogaPose.addBodyPart(15,11,23,160,26,24,27,120 ),new String[]{"good", "perfect"}));

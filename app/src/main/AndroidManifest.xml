@@ -3,11 +3,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.fyp_app"
     android:installLocation="auto">
-    <uses-sdk android:minSdkVersion="24" tools:overrideLibrary="           androidx.camera.camera2, androidx.camera.core,           androidx.camera.view, androidx.camera.lifecycle" />
+
+    <uses-sdk
+        android:minSdkVersion="24"
+        tools:overrideLibrary="           androidx.camera.camera2, androidx.camera.core,           androidx.camera.view, androidx.camera.lifecycle" />
 
     <uses-feature android:name="android.hardware.camera" />
-    <uses-permission android:name="android.permission.CAMERA"/>
-    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
@@ -19,30 +23,38 @@
 
     <application
         android:allowBackup="true"
+        android:extractNativeLibs="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Fyp_app" >
+        android:theme="@style/Theme.Fyp_app">
+        <activity android:name=".VolumeTunning"></activity>
         <activity
             android:name=".ui.login.LoginActivity"
-            android:label="@string/title_activity_login" >
-        </activity>
+            android:label="@string/title_activity_login"></activity>
         <activity android:name=".turn_on_notifi" />
         <activity
             android:name=".MainActivity"
-            android:label="@string/app_name" >
+            android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".YogaCompletedActivity"
-            android:screenOrientation="landscape"></activity>
+        <activity
+            android:name=".YogaCompletedActivity"
+            android:screenOrientation="landscape" />
         <activity android:name=".TiltingActivity" />
-        <activity android:name=".Breath" android:screenOrientation="landscape"/>
-        <activity android:name=".BreathCompleted" android:screenOrientation="landscape"/>
-        <activity android:name=".ScanFood"/>
+        <activity
+            android:name=".Breath"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".BreathCompleted"
+            android:screenOrientation="landscape" />
+        <activity android:name=".ScanFood" />
+
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
@@ -58,20 +70,14 @@
             android:name=".EntryChoiceActivity"
             android:configChanges="orientation|screenSize"
             android:exported="true"
-            android:theme="@style/Theme.Fyp_app">
-        </activity>
+            android:theme="@style/Theme.Fyp_app"></activity>
         <activity
             android:name=".LivePreviewActivity"
             android:exported="true"
             android:screenOrientation="landscape"
             android:theme="@style/Theme.Fyp_app" />
-
-        <activity
-            android:name=".FoodNutrientInfoActivity"/>
-        <activity
-            android:name=".FoodNutrient"/>
+        <activity android:name=".FoodNutrientInfoActivity" />
+        <activity android:name=".FoodNutrient" />
     </application>
-
-
 
 </manifest>
