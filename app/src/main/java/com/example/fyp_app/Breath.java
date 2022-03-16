@@ -3,6 +3,7 @@ package com.example.fyp_app;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
@@ -40,6 +41,7 @@ public final class Breath extends AppCompatActivity {
     public SharedPref pref;
     private HashMap _$_findViewCache;
     int time = 59;
+    MediaPlayer mp;
     @NotNull
     public final SharedPref getPref() {
         SharedPref var10000 = this.pref;
@@ -65,6 +67,7 @@ public final class Breath extends AppCompatActivity {
         //Intrinsics.checkExpressionValueIsNotNull(var10000, "breathtoday");
         Object[] var10002 = new Object[1];
         SharedPref var10005 = this.pref;
+        mp = MediaPlayer.create(this, R.raw.videoplayback);
         if (var10005 == null) {
             Intrinsics.throwUninitializedPropertyAccessException("pref");
         }
@@ -81,6 +84,7 @@ public final class Breath extends AppCompatActivity {
         //var10000.setText((CharSequence)var10001.getDate());
         ((Button)this._$_findCachedViewById(R.id.startbtn)).setOnClickListener((OnClickListener)(new OnClickListener() {
             public final void onClick(View it) {
+                mp.start();
                 Breath.this.animationstart();
                 TextView text = (TextView)findViewById(R.id.breathtoday);
                 new CountDownTimer(60000,1000) {
@@ -92,10 +96,14 @@ public final class Breath extends AppCompatActivity {
 
                     @Override
                     public void onFinish() {
+                        mp.release();
                         startActivity(new Intent((Context)Breath.this, LivePreviewActivity.class));
+                        overridePendingTransition(0,0);
                         finish();
                     }
                 }.start();
+                Button button = findViewById(id.startbtn);
+                button.setEnabled(false);
             }
         }));
     }
@@ -107,7 +115,7 @@ public final class Breath extends AppCompatActivity {
                 Intrinsics.checkExpressionValueIsNotNull(var10000, "breathtxt");
                 var10000.setText((CharSequence)"Inhale........ Exhale");
             }
-        })).thenAnimate(new View[]{(View)((ImageView)this._$_findCachedViewById(R.id.flower))}).scale(new float[]{0, 1.5F, 0}).rotation(new float[]{360.0F}).repeatCount(10).accelerate().duration(5500).onStop((Stop)(new Stop() {
+        })).thenAnimate(new View[]{(View)((ImageView)this._$_findCachedViewById(R.id.flower))}).scale(new float[]{0, 1.5F, 0}).rotation(new float[]{360.0F}).repeatCount(10).accelerate().duration(7000).onStop((Stop)(new Stop() {
             public final void onStop() {
                 TextView var10000 = (TextView)Breath.this._$_findCachedViewById(R.id.breathtxt);
                 Intrinsics.checkExpressionValueIsNotNull(var10000, "breathtxt");
@@ -124,6 +132,7 @@ public final class Breath extends AppCompatActivity {
                 Runnable countDownTimer = (Runnable)(new Runnable() {
                     public final void run() {
                         Breath.this.startActivity(new Intent((Context)Breath.this, Breath.class));
+                        overridePendingTransition(0,0);
                         Breath.this.finish();
                     }
                 });
