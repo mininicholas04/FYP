@@ -46,7 +46,9 @@
         <activity
             android:name=".YogaCompletedActivity"
             android:screenOrientation="landscape" />
-        <activity android:name=".TiltingActivity" />
+        <activity
+            android:name=".TiltingActivity"
+            android:screenOrientation="landscape" />
         <activity
             android:name=".Breath"
             android:screenOrientation="landscape" />

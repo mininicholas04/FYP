@@ -133,7 +133,7 @@ public class TiltingActivity extends AppCompatActivity implements SensorEventLis
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        text.setText(String.valueOf(rollDeg));
+                        text.setText(String.valueOf(-rollDeg)+"\u00B0");
                     }
                 });
 
