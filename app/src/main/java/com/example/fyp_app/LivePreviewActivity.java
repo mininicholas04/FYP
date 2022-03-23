@@ -73,7 +73,7 @@ public final class LivePreviewActivity extends AppCompatActivity
     WebView view;
     private YogaProgramBeginner yogaProgramBeginner;
     MediaPlayer mp;
-    ImageButton button;
+    ImageButton button,skipButton;
     Dialog dialog;
     ImageButton toggleButton;
     Animation animation;
@@ -88,6 +88,7 @@ public final class LivePreviewActivity extends AppCompatActivity
         actionBar.hide();
         setContentView(R.layout.activity_vision_live_preview);
         button = findViewById(R.id.pausebutton);
+        skipButton = findViewById(R.id.skipbutton);
         dialog = new Dialog(this);
         yogaProgramBeginner = new YogaProgramBeginner();
         mp = MediaPlayer.create(this, R.raw.yogamusic);
@@ -163,7 +164,6 @@ public final class LivePreviewActivity extends AppCompatActivity
                 quit.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        onDestroy();
                         mp.release();
                         dialog.dismiss();
                         startActivity(new Intent(getApplicationContext(), MainActivity.class));
@@ -183,7 +183,14 @@ public final class LivePreviewActivity extends AppCompatActivity
                 mp.pause();
             }
         });
-
+        skipButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //skip to next yoga pose
+                PoseGraphic.l++;
+                //timer reset, or count & yogacount reset
+            }
+        });
         toggleButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View e) {

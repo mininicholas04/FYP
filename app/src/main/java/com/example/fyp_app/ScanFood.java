@@ -66,9 +66,9 @@ public class ScanFood extends AppCompatActivity {
         IntentResult intentResult = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
         if(intentResult!=null){
             if(intentResult.getContents()==null){
-                foodname_textView.setText("Not found");
-                quan_textView.setText("Not found");
-                ingred_textView.setText("Not found");
+                foodname_textView.setText("Error");
+                quan_textView.setText("Error");
+                ingred_textView.setText("Error");
             }
             else{
                 jsonParse(intentResult.getContents());
@@ -122,7 +122,11 @@ public class ScanFood extends AppCompatActivity {
 
                 }
                 catch(Exception e){
-                    foodname_textView.setText("error");
+                    foodname_textView.setText("Not found");
+                    fat_textview.setText("Not found");
+                    safat_textview.setText("Not found");
+                    sugar_textview.setText("Not found");
+                    salt_textview.setText("Not found");
                 }
             }
         }, new Response.ErrorListener() {
