@@ -35,6 +35,7 @@ import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.core.app.ActivityCompat;
@@ -76,8 +77,8 @@ public final class LivePreviewActivity extends AppCompatActivity
     ImageButton button,skipButton;
     Dialog dialog;
     ImageButton toggleButton;
-    Animation animation;
     boolean show = true;
+    TextView yogaName;
 
     @Override
 
@@ -94,6 +95,7 @@ public final class LivePreviewActivity extends AppCompatActivity
         mp = MediaPlayer.create(this, R.raw.yogamusic);
         preview = findViewById(R.id.preview_view);
         toggleButton = findViewById(R.id.togglebutton);
+        yogaName = findViewById(R.id.yogaName);
         if (preview == null) {
             Log.d(TAG, "Preview is null");
         }
@@ -149,6 +151,7 @@ public final class LivePreviewActivity extends AppCompatActivity
                     @Override
                     public void run() {
                         view.loadUrl("file:///android_asset/yogapose" + l + ".jpg");
+                        yogaName.setText(""+yogaProgramBeginner.getProgram().get(l).getName());
 
                     }
                 });
