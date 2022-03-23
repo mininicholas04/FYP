@@ -345,7 +345,10 @@ public class PoseGraphic extends Graphic {
                                       @Override
                                       public void run() {
                                           view.loadUrl("file:///android_asset/yogapose"+l+".jpg");
-
+                                          TextView yogaName = activity.findViewById(R.id.yogaName);
+                                          if(l<6) {
+                                              yogaName.setText("" + yogaProgramBeginner.getProgram().get(l).getName());
+                                          }
                                       }
                                   });
                               }
