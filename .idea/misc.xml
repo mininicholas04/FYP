@@ -31,9 +31,6 @@
         <entry key="..\:/Users/B/Downloads/FYP/FYP/app/src/main/res/layout/training_4.xml" value="0.2957427536231884" />
         <entry key="..\:/Users/B/Downloads/FYP/FYP/app/src/main/res/layout/training_5.xml" value="0.2957427536231884" />
         <entry key="..\:/Users/Iris/Downloads/FYP3/app/src/main/res/drawable-v24/food_icon.xml" value="0.1" />
-        <entry key="..\:/Users/Iris/Downloads/FYP3/app/src/main/res/drawable/arrow_back.xml" value="0.1" />
-        <entry key="..\:/Users/Iris/Downloads/FYP3/app/src/main/res/drawable/btn_circle.xml" value="0.1" />
-        <entry key="..\:/Users/Iris/Downloads/FYP3/app/src/main/res/drawable/pause.xml" value="0.1" />
         <entry key="..\:/Users/Iris/Downloads/FYP3/app/src/main/res/layout/activity_breath.xml" value="0.1" />
         <entry key="..\:/Users/Iris/Downloads/FYP3/app/src/main/res/layout/activity_entry_choice.xml" value="0.1" />
         <entry key="..\:/Users/Iris/Downloads/FYP3/app/src/main/res/layout/activity_login.xml" value="0.1" />
@@ -42,7 +39,7 @@
         <entry key="..\:/Users/Iris/Downloads/FYP3/app/src/main/res/layout/activity_scanfood.xml" value="0.1640625" />
         <entry key="..\:/Users/Iris/Downloads/FYP3/app/src/main/res/layout/activity_tilting.xml" value="0.1" />
         <entry key="..\:/Users/Iris/Downloads/FYP3/app/src/main/res/layout/activity_turn_on_notifi.xml" value="0.1" />
-        <entry key="..\:/Users/Iris/Downloads/FYP3/app/src/main/res/layout/activity_vision_live_preview.xml" value="0.26974198592650506" />
+        <entry key="..\:/Users/Iris/Downloads/FYP3/app/src/main/res/layout/activity_vision_live_preview.xml" value="0.1" />
         <entry key="..\:/Users/Iris/Downloads/FYP3/app/src/main/res/layout/activity_yoga_completed.xml" value="0.1" />
         <entry key="..\:/Users/Iris/Downloads/FYP3/app/src/main/res/layout/create_acc.xml" value="0.1" />
         <entry key="..\:/Users/Iris/Downloads/FYP3/app/src/main/res/layout/dashboard.xml" value="0.1" />
@@ -54,10 +51,6 @@
         <entry key="..\:/Users/Iris/Downloads/FYP3/app/src/main/res/layout/recyclerview_nutrient_info.xml" value="0.10520833333333333" />
         <entry key="..\:/Users/Iris/Downloads/FYP3/app/src/main/res/layout/recyclerview_snap.xml" value="0.1" />
         <entry key="..\:/Users/Iris/Downloads/FYP3/app/src/main/res/layout/snap_details.xml" value="0.1640625" />
-        <entry key="..\:/Users/Iris/Downloads/FYP3/app/src/main/res/layout/training_0.xml" value="0.1" />
-        <entry key="..\:/Users/Iris/Downloads/FYP3/app/src/main/res/layout/training_1.xml" value="0.1" />
-        <entry key="..\:/Users/Iris/Downloads/FYP3/app/src/main/res/layout/training_2.xml" value="0.1" />
-        <entry key="..\:/Users/Iris/Downloads/FYP3/app/src/main/res/layout/yago_pasuse.xml" value="0.1" />
         <entry key="..\:/Users/Iris/Downloads/FYP3/app/src/main/res/menu/bottom_nav_menu.xml" value="0.1" />
         <entry key="..\:/Users/Iris/Downloads/FYP_Test2/app/src/main/res/drawable/list_item_background.xml" value="0.1" />
         <entry key="..\:/Users/Iris/Downloads/FYP_Test2/app/src/main/res/drawable/logo_mlkit.xml" value="0.1" />
@@ -76,12 +69,21 @@
         <entry key="..\:/Users/Iris/Downloads/fyp_app/app/src/main/res/layout/recyclerview_snap.xml" value="0.1" />
         <entry key="..\:/Users/Iris/Downloads/fyp_app/app/src/main/res/layout/snap_details.xml" value="0.1" />
         <entry key="..\:/Users/Iris/Downloads/fyp_app/app/src/main/res/menu/camera_button_menu.xml" value="0.1" />
+        <entry key="..\:/Users/nicholas/StudioProjects/FYP/app/src/main/res/drawable/edit_text_design.xml" value="0.1365" />
+        <entry key="..\:/Users/nicholas/StudioProjects/FYP/app/src/main/res/drawable/eye_icon.xml" value="0.1365" />
         <entry key="..\:/Users/nicholas/StudioProjects/FYP/app/src/main/res/drawable/grey_round_corner2.xml" value="0.2535" />
+        <entry key="..\:/Users/nicholas/StudioProjects/FYP/app/src/main/res/drawable/heart_broken.xml" value="0.1365" />
+        <entry key="..\:/Users/nicholas/StudioProjects/FYP/app/src/main/res/drawable/leg_icon.xml" value="0.1365" />
         <entry key="..\:/Users/nicholas/StudioProjects/FYP/app/src/main/res/layout/activity_entry_choice.xml" value="0.2545289855072464" />
+        <entry key="..\:/Users/nicholas/StudioProjects/FYP/app/src/main/res/layout/activity_login.xml" value="0.264" />
         <entry key="..\:/Users/nicholas/StudioProjects/FYP/app/src/main/res/layout/activity_tilting.xml" value="0.4036458333333333" />
         <entry key="..\:/Users/nicholas/StudioProjects/FYP/app/src/main/res/layout/activity_vision_live_preview.xml" value="0.2" />
         <entry key="..\:/Users/nicholas/StudioProjects/FYP/app/src/main/res/layout/activity_volume_tunning.xml" value="0.8800000000000001" />
         <entry key="..\:/Users/nicholas/StudioProjects/FYP/app/src/main/res/layout/activity_yoga_completed.xml" value="0.31476449275362317" />
+        <entry key="..\:/Users/nicholas/StudioProjects/FYP/app/src/main/res/layout/create_acc.xml" value="0.16304347826086957" />
+        <entry key="..\:/Users/nicholas/StudioProjects/FYP/app/src/main/res/layout/fragment_dashboard.xml" value="0.16304347826086957" />
+        <entry key="..\:/Users/nicholas/StudioProjects/FYP/app/src/main/res/layout/snap_details.xml" value="0.16304347826086957" />
+        <entry key="..\:/Users/nicholas/StudioProjects/FYP/app/src/main/res/layout/splash_screen.xml" value="0.16304347826086957" />
         <entry key="..\:/Users/nicholas/StudioProjects/FYP/app/src/main/res/layout/yago_pasuse.xml" value="0.264" />
       </map>
     </option>

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/yogabg1">
+    android:background="@drawable/banner5">
 
     <TextView
         android:id="@+id/textView"
@@ -13,7 +13,6 @@
         android:layout_marginStart="32dp"
         android:layout_marginBottom="4dp"
         android:text="YOGA"
-        android:textColor="@color/white"
         android:textSize="30sp"
         app:layout_constraintBottom_toTopOf="@+id/textView2"
         app:layout_constraintStart_toStartOf="@+id/textView2" />
@@ -25,7 +24,6 @@
         android:layout_marginTop="4dp"
         android:layout_marginEnd="36dp"
         android:text="and move."
-        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="@+id/textView2"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
@@ -37,7 +35,6 @@
         android:layout_marginBottom="76dp"
         android:onClick="CreateAcc"
         android:text="Create account"
-        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView5" />
@@ -48,7 +45,6 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="19dp"
         android:text="New to YOGA APP?"
-        android:textColor="@color/white"
         app:layout_constraintBaseline_toBaselineOf="@+id/textView4"
         app:layout_constraintEnd_toStartOf="@+id/textView4"
         app:layout_constraintHorizontal_chainStyle="packed"
@@ -75,7 +71,6 @@
         android:layout_marginStart="24dp"
         android:layout_marginBottom="40dp"
         android:text="A way to think, breathe,"
-        android:textColor="@color/white"
         app:layout_constraintBottom_toTopOf="@+id/btn_login"
         app:layout_constraintStart_toStartOf="@+id/btn_login" />
 

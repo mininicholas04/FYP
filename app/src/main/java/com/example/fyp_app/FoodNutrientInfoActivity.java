@@ -6,6 +6,7 @@ import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -24,6 +25,8 @@ public class FoodNutrientInfoActivity extends AppCompatActivity {
     TextView foodNutrientGram;
 
     protected void onCreate(Bundle savedInstanceState) {
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.hide();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.food_nutrient_info);
         recyclerView2 = findViewById(R.id.recyclerView_Nutrient);

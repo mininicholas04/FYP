@@ -19,4 +19,5 @@
     <color name="white">#FFFFFFFF</color>
     <color name="light_grey">#bebebe</color>
     <color name="lightgrey">#d1d1d1</color>
+    <color name="orange">#fecb02</color>
 </resources>

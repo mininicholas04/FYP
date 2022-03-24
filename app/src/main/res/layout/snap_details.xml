@@ -1,23 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fillViewport="false">
+
+    android:background="#F5F5F5"
+    tools:context=".ScanFood">
 
     <RelativeLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="30dp"
-        tools:context=".ScanFood">
+        android:layout_margin="30dp">
 
         <TextView
             android:id="@+id/firstline"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textStyle="bold"
             android:text="1. Snap a picture with barcode"/>
 
         <Button
@@ -37,8 +38,9 @@
             android:id="@+id/secondline"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="2. Nutrition fact"
+            android:text="2. Product characteristics"
             android:layout_marginTop="20dp"
+            android:textStyle="bold"
             android:layout_below="@+id/btn_snap"/>
 
         <TextView
@@ -70,112 +72,451 @@
                 android:text="" />
         </LinearLayout>
 
-        <TextView
+        <!--<TextView
             android:id="@+id/text1_1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/layout1_1"
             android:layout_marginTop="10dp"
             android:text="Nutrition facts: " />
-
         <RelativeLayout
-            android:id="@+id/pic"
-            android:layout_width="300dp"
-            android:layout_height="200dp"
-            android:layout_below="@id/text1_1"
-            android:layout_marginTop="10dp">
-
+                android:id="@+id/pic"
+                android:layout_width="300dp"
+                android:layout_height="200dp"
+                android:layout_below="@id/text1_1"
+                android:layout_marginTop="10dp">
             <ImageView
-                android:id="@+id/snap_nutri"
-                android:layout_width="wrap_content"
-                android:layout_height="fill_parent"
-                android:adjustViewBounds="true"
-                android:scaleType="centerCrop"/>
-
-        </RelativeLayout>
+                    android:id="@+id/snap_nutri"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerCrop"/>
+        </RelativeLayout>-->
 
         <TextView
             android:id="@+id/thirdline"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="3. Remind"
-            android:layout_below="@+id/pic"
+            android:text="3. Nutrition facts"
+            android:textStyle="bold"
+            android:layout_below="@+id/layout1_1"
             android:layout_marginTop="10dp"/>
 
         <TextView
-            android:id="@+id/remind"
+            android:id="@+id/text123456"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Nutrient levels"
-            android:layout_below="@+id/thirdline"
-            android:layout_marginTop="10dp"/>
+            android:layout_below="@id/thirdline"
+            android:layout_marginTop="5dp"
+            android:text="NutriScore color nutrition grade "/>
 
-        <TableLayout
-            android:id="@+id/table1"
+        <LinearLayout
+            android:id="@+id/image1"
+            android:layout_below="@+id/text123456"
+            android:layout_width="wrap_content"
+            android:layout_height="150dp">
+            <ImageView
+                android:id="@+id/nutri_score"
+                android:layout_width="wrap_content"
+                android:layout_height="150dp"
+                android:scaleType="centerCrop"
+                android:adjustViewBounds="true" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/fourth"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/remind"
-            android:layout_marginTop="5dp">
+            android:layout_below="@+id/image1"
+            android:text="Each serving contains"/>
 
-            <TableRow>
-                <TextView
-                    android:layout_height="wrap_content"
-                    android:layout_width="120dp"
-                    android:text="Nutrient"/>
-                <TextView
-                    android:layout_height="wrap_content"
-                    android:layout_width="120dp"
-                    android:text="Quantity"/>
-            </TableRow>
+        <LinearLayout
+            android:id="@+id/level"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:orientation="horizontal"
+            android:layout_marginTop="5dp"
+            android:layout_below="@id/fourth">
 
-            <TableRow>
-                <TextView
-                    android:layout_height="wrap_content"
-                    android:layout_width="120dp"
-                    android:text="Fat"/>
-                <TextView
-                    android:id="@+id/snap_fat"
-                    android:layout_height="wrap_content"
-                    android:layout_width="120dp"
-                    android:text=""/>
-            </TableRow>
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card1"
+                android:layout_width="70dp"
+                android:layout_height="100dp"
+                android:layout_margin="5dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="20dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                    <RelativeLayout
+                        android:id="@+id/fat_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:background="@color/light_green_700">
 
-            <TableRow>
-                <TextView
-                    android:layout_height="wrap_content"
-                    android:layout_width="120dp"
-                    android:text="Saturated fat"/>
-                <TextView
-                    android:id="@+id/snap_safat"
-                    android:layout_height="wrap_content"
-                    android:layout_width="120dp"
-                    android:text=""/>
-            </TableRow>
+                        <TextView
+                            android:id="@+id/fat"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="Fat"
+                            android:textStyle="bold"
+                            android:textAlignment="center" />
 
-            <TableRow>
-                <TextView
-                    android:layout_height="wrap_content"
-                    android:layout_width="120dp"
-                    android:text="Sugars"/>
-                <TextView
-                    android:id="@+id/snap_sugar"
-                    android:layout_height="wrap_content"
-                    android:layout_width="120dp"
-                    android:text=""/>
-            </TableRow>
+                        <LinearLayout
+                            android:id="@+id/num1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="5dp"
+                            android:layout_below="@+id/fat" >
 
-            <TableRow>
-                <TextView
-                    android:layout_height="wrap_content"
-                    android:layout_width="120dp"
-                    android:text="Salt"/>
-                <TextView
-                    android:id="@+id/snap_salt"
-                    android:layout_height="wrap_content"
-                    android:layout_width="120dp"
-                    android:text=""/>
-            </TableRow>
-        </TableLayout>
+                            <TextView
+                                android:id="@+id/fat_num"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="0"
+                                />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text=" g"
+                                android:layout_toRightOf="@+id/fat_num" />
+                        </LinearLayout>
+                    </RelativeLayout>
 
+
+                    <TextView
+                        android:id="@+id/percent_fat"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:textAlignment="center"
+                        android:textStyle="bold"
+                        android:layout_marginTop="5dp" />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card2"
+                android:layout_width="70dp"
+                android:layout_height="100dp"
+                app:cardBackgroundColor="@color/white"
+                android:layout_toRightOf="@+id/card1"
+                android:layout_marginLeft="5dp"
+                android:layout_margin="5dp"
+                app:cardCornerRadius="20dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                    <RelativeLayout
+                        android:id="@+id/safat_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:background="@color/light_green_700">
+
+                        <TextView
+                            android:id="@+id/safat"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:text="Saturated"
+                            android:textStyle="bold"
+                            android:textAlignment="center" />
+                        <TextView
+                            android:id="@+id/safat2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/safat"
+                            android:text="fat"
+                            android:textStyle="bold"
+                            android:textAlignment="center" />
+
+                        <LinearLayout
+                            android:id="@+id/num2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:orientation="horizontal"
+                            android:layout_below="@+id/safat2" >
+
+                            <TextView
+                                android:id="@+id/safat_num"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="0"
+                                />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text=" g"
+                                android:layout_toRightOf="@+id/safat_num" />
+                        </LinearLayout>
+                    </RelativeLayout>
+
+                    <TextView
+                        android:id="@+id/percent_safat"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:textAlignment="center"
+                        android:textStyle="bold"
+                        android:layout_marginTop="5dp" />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card3"
+                android:layout_width="70dp"
+                android:layout_height="100dp"
+                app:cardBackgroundColor="@color/white"
+                android:layout_toRightOf="@+id/card2"
+                android:layout_marginLeft="5dp"
+                android:layout_margin="5dp"
+                app:cardCornerRadius="20dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                    <RelativeLayout
+                        android:id="@+id/sugar_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:background="@color/light_green_700">
+
+                        <TextView
+                            android:id="@+id/sugar"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="Sugar"
+                            android:textStyle="bold"
+                            android:textAlignment="center" />
+
+                        <LinearLayout
+                            android:id="@+id/num4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="5dp"
+                            android:layout_below="@+id/sugar" >
+
+                            <TextView
+                                android:id="@+id/sugar_num"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="0"
+                                />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text=" g"
+                                android:layout_toRightOf="@+id/fat_num" />
+                        </LinearLayout>
+                    </RelativeLayout>
+
+                    <TextView
+                        android:id="@+id/percent_sugar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:textAlignment="center"
+                        android:textStyle="bold"
+                        android:layout_marginTop="5dp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card4"
+                android:layout_width="70dp"
+                android:layout_height="100dp"
+                app:cardBackgroundColor="@color/white"
+                android:layout_toRightOf="@+id/card2"
+                android:layout_marginLeft="5dp"
+                android:layout_margin="5dp"
+                app:cardCornerRadius="20dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                    <RelativeLayout
+                        android:id="@+id/salt_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:background="@color/light_green_700">
+
+                        <TextView
+                            android:id="@+id/salt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="Salt"
+                            android:textStyle="bold"
+                            android:textAlignment="center" />
+
+                        <LinearLayout
+                            android:id="@+id/num5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="5dp"
+                            android:layout_below="@+id/salt" >
+
+                            <TextView
+                                android:id="@+id/salt_num"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="0"
+                                />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text=" g"
+                                android:layout_toRightOf="@+id/fat_num" />
+                        </LinearLayout>
+                    </RelativeLayout>
+
+                    <TextView
+                        android:id="@+id/percent_salt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:textAlignment="center"
+                        android:textStyle="bold"
+                        android:layout_marginTop="5dp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/levelll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:orientation="horizontal"
+            android:layout_marginTop="5dp"
+            android:layout_below="@id/level">
+
+            <TextView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_marginTop="3dp"
+                android:background="@color/light_green_700"
+                android:text=""/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" low "/>
+
+            <TextView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_marginTop="3dp"
+                android:background="@color/orange"
+                android:text=""/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" moderate "/>
+
+            <TextView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_marginTop="3dp"
+                android:background="@color/red"
+                android:text=""/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" high "/>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/fat_adult"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/levelll"
+            android:layout_marginTop="5dp"
+            android:text="of an adult's reference intake" />
     </RelativeLayout>
-</ScrollView>
+</RelativeLayout>
+
+
+    <!--<TextView
+        android:id="@+id/remind"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nutrient levels"
+        android:layout_below="@+id/thirdline"
+        android:layout_marginTop="10dp"/>
+    <TableLayout
+        android:id="@+id/table1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/remind"
+        android:layout_marginTop="5dp">
+        <TableRow>
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="120dp"
+                android:text="Nutrient"/>
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="120dp"
+                android:text="Quantity"/>
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="120dp"
+                android:text="Fat"/>
+            <TextView
+                android:id="@+id/snap_fat"
+                android:layout_height="wrap_content"
+                android:layout_width="120dp"
+                android:text=""/>
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="120dp"
+                android:text="Saturated fat"/>
+            <TextView
+                android:id="@+id/snap_safat"
+                android:layout_height="wrap_content"
+                android:layout_width="120dp"
+                android:text=""/>
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="120dp"
+                android:text="Sugars"/>
+            <TextView
+                android:id="@+id/snap_sugar"
+                android:layout_height="wrap_content"
+                android:layout_width="120dp"
+                android:text=""/>
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="120dp"
+                android:text="Salt"/>
+            <TextView
+                android:id="@+id/snap_salt"
+                android:layout_height="wrap_content"
+                android:layout_width="120dp"
+                android:text=""/>
+        </TableRow>
+    </TableLayout>-->

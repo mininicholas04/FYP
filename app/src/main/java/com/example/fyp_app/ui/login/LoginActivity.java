@@ -1,8 +1,12 @@
 package  com.example.fyp_app.ui.login;
 
 import android.app.Activity;
+
+import androidx.appcompat.app.ActionBar;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+
+import android.content.Intent;
 import android.os.Bundle;
 import androidx.annotation.Nullable;
 import androidx.annotation.StringRes;
@@ -18,6 +22,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.fyp_app.MainActivity;
 import com.example.fyp_app.R;
 import com.example.fyp_app.ui.login.LoginViewModel;
 import com.example.fyp_app.ui.login.LoginViewModelFactory;
@@ -28,6 +33,8 @@ public class LoginActivity extends AppCompatActivity {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.hide();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         loginViewModel = new ViewModelProvider(this, new LoginViewModelFactory())
@@ -36,8 +43,14 @@ public class LoginActivity extends AppCompatActivity {
         final EditText usernameEditText = findViewById(R.id.user_email);
         final EditText passwordEditText = findViewById(R.id.user_password);
         final Button loginButton = findViewById(R.id.btn_login);
+        final Button skipButton = findViewById(R.id.skip);
         //final ProgressBar loadingProgressBar = findViewById(R.id.loading);
-
+        skipButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), MainActivity.class));
+            }
+        });
         loginViewModel.getLoginFormState().observe(this, new Observer<LoginFormState>() {
             @Override
             public void onChanged(@Nullable LoginFormState loginFormState) {
