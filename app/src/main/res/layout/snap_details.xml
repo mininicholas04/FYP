@@ -14,6 +14,11 @@
         android:layout_height="match_parent"
         android:layout_margin="30dp">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="30dp">
+
         <TextView
             android:id="@+id/firstline"
             android:layout_width="wrap_content"
@@ -450,73 +455,4 @@
             android:text="of an adult's reference intake" />
     </RelativeLayout>
 </RelativeLayout>
-
-
-    <!--<TextView
-        android:id="@+id/remind"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Nutrient levels"
-        android:layout_below="@+id/thirdline"
-        android:layout_marginTop="10dp"/>
-    <TableLayout
-        android:id="@+id/table1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/remind"
-        android:layout_marginTop="5dp">
-        <TableRow>
-            <TextView
-                android:layout_height="wrap_content"
-                android:layout_width="120dp"
-                android:text="Nutrient"/>
-            <TextView
-                android:layout_height="wrap_content"
-                android:layout_width="120dp"
-                android:text="Quantity"/>
-        </TableRow>
-        <TableRow>
-            <TextView
-                android:layout_height="wrap_content"
-                android:layout_width="120dp"
-                android:text="Fat"/>
-            <TextView
-                android:id="@+id/snap_fat"
-                android:layout_height="wrap_content"
-                android:layout_width="120dp"
-                android:text=""/>
-        </TableRow>
-        <TableRow>
-            <TextView
-                android:layout_height="wrap_content"
-                android:layout_width="120dp"
-                android:text="Saturated fat"/>
-            <TextView
-                android:id="@+id/snap_safat"
-                android:layout_height="wrap_content"
-                android:layout_width="120dp"
-                android:text=""/>
-        </TableRow>
-        <TableRow>
-            <TextView
-                android:layout_height="wrap_content"
-                android:layout_width="120dp"
-                android:text="Sugars"/>
-            <TextView
-                android:id="@+id/snap_sugar"
-                android:layout_height="wrap_content"
-                android:layout_width="120dp"
-                android:text=""/>
-        </TableRow>
-        <TableRow>
-            <TextView
-                android:layout_height="wrap_content"
-                android:layout_width="120dp"
-                android:text="Salt"/>
-            <TextView
-                android:id="@+id/snap_salt"
-                android:layout_height="wrap_content"
-                android:layout_width="120dp"
-                android:text=""/>
-        </TableRow>
-    </TableLayout>-->
+</RelativeLayout>

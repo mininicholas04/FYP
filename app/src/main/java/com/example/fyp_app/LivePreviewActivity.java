@@ -1,11 +1,8 @@
 package com.example.fyp_app;
 
-import android.animation.AnimatorInflater;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
-import android.animation.ValueAnimator;
 import android.annotation.SuppressLint;
-import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
@@ -14,41 +11,26 @@ import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.media.MediaPlayer;
-import android.os.Build;
 import android.os.Bundle;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.os.Handler;
 import android.speech.tts.TextToSpeech;
 import android.util.Log;
-import android.view.Display;
 import android.view.View;
-import android.view.animation.AccelerateInterpolator;
-import android.view.animation.Animation;
-import android.view.animation.AnimationSet;
-import android.view.animation.AnimationUtils;
-import android.view.animation.DecelerateInterpolator;
-import android.view.animation.TranslateAnimation;
 import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.core.app.ActivityCompat;
 import androidx.core.app.ActivityCompat.OnRequestPermissionsResultCallback;
 import androidx.core.content.ContextCompat;
-import androidx.core.view.WindowCompat;
 
 import com.example.fyp_app.posedetector.PoseGraphic;
 import com.google.android.gms.common.annotation.KeepName;
-import com.example.fyp_app.CameraSource;
-import com.example.fyp_app.CameraSourcePreview;
-import com.example.fyp_app.GraphicOverlay;
-import com.example.fyp_app.R;
 import com.example.fyp_app.posedetector.PoseDetectorProcessor;
 import com.example.fyp_app.posedetector.YogaProgramBeginner;
 import com.example.fyp_app.preference.PreferenceUtils;
@@ -192,6 +174,7 @@ public final class LivePreviewActivity extends AppCompatActivity
                 //skip to next yoga pose
                 PoseGraphic.l++;
                 //timer reset, or count & yogacount reset
+                //PoseGraphic.startTimer();
             }
         });
         toggleButton.setOnClickListener(new View.OnClickListener() {
