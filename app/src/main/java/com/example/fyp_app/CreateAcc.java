@@ -1,9 +1,11 @@
 package com.example.fyp_app;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Patterns;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -11,6 +13,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -35,6 +38,7 @@ public class CreateAcc extends AppCompatActivity implements AdapterView.OnItemSe
         btn_female = findViewById(R.id.btn_female);
 
         Button btn_signup = (Button) findViewById(R.id.btn_signup);
+        TextView btn_gotoLogin = (TextView)findViewById(R.id.btn_gotoLogin);
 
         String[] bodyPart = getResources().getStringArray(R.array.body_part);
         ArrayAdapter adapter = new ArrayAdapter(this,
@@ -51,8 +55,18 @@ public class CreateAcc extends AppCompatActivity implements AdapterView.OnItemSe
                 checkDataEntered();
             }
         });
+        btn_gotoLogin.setOnTouchListener(new View.OnTouchListener() {
+
+            @Override
+            public boolean onTouch(View arg0, MotionEvent arg1) {
+                Intent i = new Intent(getApplicationContext(), LoginActivity.class);
+                startActivity(i);
+                return false;
+            }
+        });
 
     }
+
     boolean isEmpty(EditText text) {
         CharSequence str = text.getText().toString();
         return TextUtils.isEmpty(str);
@@ -112,4 +126,6 @@ public class CreateAcc extends AppCompatActivity implements AdapterView.OnItemSe
         Intent intent = new Intent(CreateAcc.this, LoginActivity.class);
         startActivity(intent);
     }
+
+
 }
