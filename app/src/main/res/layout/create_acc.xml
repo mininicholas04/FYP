@@ -78,14 +78,17 @@
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_marginRight="35dp"
-                android:state_selected="true"
-                android:background="@drawable/btn_circle"
+                android:state_selected="false"
+                android:clickable="true"
+                android:background="@drawable/default_btn_selector"
                 android:src="@drawable/ic_baseline_male_24"/>
 
             <ImageButton android:id="@+id/btn_female"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:background="@drawable/btn_circle"
+                android:clickable="true"
+                android:background="@drawable/default_btn_selector"
+                android:state_selected="true"
                 android:src="@drawable/ic_baseline_female_24"/>
         </LinearLayout>
 

@@ -3,6 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Iris/Downloads/FYP3/app/src/main/res/drawable/btn_circle.xml" value="0.1796875" />
+        <entry key="..\:/Users/Iris/Downloads/FYP3/app/src/main/res/drawable/btn_circle_selected.xml" value="0.1796875" />
+        <entry key="..\:/Users/Iris/Downloads/FYP3/app/src/main/res/drawable/default_btn_selector.xml" value="0.1796875" />
         <entry key="..\:/Users/Iris/Downloads/FYP3/app/src/main/res/layout/activity_entry_choice.xml" value="0.16354166666666667" />
         <entry key="..\:/Users/Iris/Downloads/FYP3/app/src/main/res/layout/activity_login.xml" value="0.7333333333333334" />
         <entry key="..\:/Users/Iris/Downloads/FYP3/app/src/main/res/layout/create_acc.xml" value="0.4069264069264069" />

@@ -64,7 +64,21 @@ public class CreateAcc extends AppCompatActivity implements AdapterView.OnItemSe
                 return false;
             }
         });
-
+        //Gender button
+        btn_male.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                btn_male.setSelected(true);
+                gender = "male";
+                btn_female.setSelected(false);
+            }
+        });
+        btn_female.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                return false;
+            }
+        });
     }
 
     boolean isEmpty(EditText text) {
@@ -90,24 +104,6 @@ public class CreateAcc extends AppCompatActivity implements AdapterView.OnItemSe
                 pw_text.setError("User password is required!");
             }
         }
-        //Gender button
-        btn_female.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                btn_female.setSelected(true);
-                gender = "female";
-                btn_male.setSelected(false);
-            }
-        });
-        btn_male.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                btn_male.setSelected(true);
-                gender = "male";
-                btn_female.setSelected(false);
-            }
-        });
-
     }
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
