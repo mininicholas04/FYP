@@ -125,8 +125,6 @@ public final class LivePreviewActivity extends AppCompatActivity
 
         view = (WebView) findViewById(R.id.webView);
         new Thread(new Runnable() {
-
-
             public void run() {
                 int l = PoseGraphic.l;
                 runOnUiThread(new Runnable() {

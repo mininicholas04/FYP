@@ -12,6 +12,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -24,6 +25,8 @@ public class CreateAcc extends AppCompatActivity implements AdapterView.OnItemSe
     private EditText name_text,email_text,pw_text;
     private String user_name,user_email,user_password,gender="male";
     private ImageButton btn_male,btn_female;
+    private boolean isPressed = true;
+    //private ListView genderList;
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
@@ -36,7 +39,6 @@ public class CreateAcc extends AppCompatActivity implements AdapterView.OnItemSe
         pw_text = (EditText)findViewById(R.id.user_password);
         btn_male = findViewById(R.id.btn_male);
         btn_female = findViewById(R.id.btn_female);
-
         Button btn_signup = (Button) findViewById(R.id.btn_signup);
         TextView btn_gotoLogin = (TextView)findViewById(R.id.btn_gotoLogin);
 
@@ -52,7 +54,10 @@ public class CreateAcc extends AppCompatActivity implements AdapterView.OnItemSe
                 user_name = name_text.getText().toString();
                 user_email = email_text.getText().toString();
                 user_password = pw_text.getText().toString();
-                checkDataEntered();
+                boolean chk= checkDataEntered();
+                if (chk){
+                    //next page
+                }
             }
         });
         btn_gotoLogin.setOnTouchListener(new View.OnTouchListener() {
@@ -65,20 +70,6 @@ public class CreateAcc extends AppCompatActivity implements AdapterView.OnItemSe
             }
         });
         //Gender button
-        btn_male.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                btn_male.setSelected(true);
-                gender = "male";
-                btn_female.setSelected(false);
-            }
-        });
-        btn_female.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View view, MotionEvent motionEvent) {
-                return false;
-            }
-        });
     }
 
     boolean isEmpty(EditText text) {
@@ -89,12 +80,13 @@ public class CreateAcc extends AppCompatActivity implements AdapterView.OnItemSe
         CharSequence email = text.getText().toString();
         return (!TextUtils.isEmpty(email) && Patterns.EMAIL_ADDRESS.matcher(email).matches());
     }
-    void checkDataEntered() {
+    boolean checkDataEntered() {
+        boolean check = false;
         //TextViews
-        if (!isEmpty(email_text) && !isEmpty(name_text) && isEmpty(pw_text)) {
-            //nextpage
-        } else {
-            if (isEmail(email_text)) {
+        if(isEmail(email_text) && !isEmpty(name_text) && !isEmpty(pw_text)){
+            check=true;
+        }else{
+            if (!isEmail(email_text)) {
                 email_text.setError("Enter valid Email!");
             }
             if (isEmpty(name_text)) {
@@ -104,6 +96,7 @@ public class CreateAcc extends AppCompatActivity implements AdapterView.OnItemSe
                 pw_text.setError("User password is required!");
             }
         }
+        return check;
     }
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -123,5 +116,13 @@ public class CreateAcc extends AppCompatActivity implements AdapterView.OnItemSe
         startActivity(intent);
     }
 
-
+    public void setGenderButton(View view) {
+        if (view.equals(btn_male)){
+            btn_male.setBackgroundResource(R.drawable.btn_circle_selected);
+            btn_female.setBackgroundResource(R.drawable.btn_circle);
+        }else{
+            btn_female.setBackgroundResource(R.drawable.btn_circle_selected);
+            btn_male.setBackgroundResource(R.drawable.btn_circle);
+        }
+    }
 }
