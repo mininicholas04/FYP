@@ -14,7 +14,8 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-
+    <uses-permission android:name="com.android.alarm.permission.SET_ALARM"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
     <queries>
         <intent>
             <action android:name="android.media.action.IMAGE_CAPTURE" />
@@ -87,6 +88,8 @@
             android:theme="@style/Theme.Fyp_app" />
         <activity android:name=".FoodNutrientInfoActivity" />
         <activity android:name=".FoodNutrient" />
+        <receiver android:name=".Notification_reciever"
+            android:enabled="true"/>
     </application>
 
 </manifest>
