@@ -2,7 +2,7 @@
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_main"
+    android:id="@+id/create_acc"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F5F5F5">
@@ -73,19 +73,25 @@
             android:orientation="horizontal"
             android:layout_marginTop="15dp"
             android:layout_below="@id/text_gender">
-
             <ImageButton android:id="@+id/btn_male"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_marginRight="35dp"
-                android:background="@drawable/btn_circle_selected"
+                android:state_selected="false"
+                android:background="@drawable/default_btn_selector"
+                android:clickable="true"
+                android:onClick="setGenderButton"
                 android:src="@drawable/ic_baseline_male_24"/>
 
             <ImageButton android:id="@+id/btn_female"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:background="@drawable/btn_circle"
+                android:background="@drawable/default_btn_selector"
+                android:state_selected="true"
+                android:clickable="true"
+                android:onClick="setGenderButton"
                 android:src="@drawable/ic_baseline_female_24"/>
+
         </LinearLayout>
 
         <TextView
@@ -137,8 +143,10 @@
                 android:layout_height="30dp">
 
                 <TextView
+                    android:id="@+id/btn_gotoLogin"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:clickable="true"
                     android:text="Sign in"
                     android:onClick="signIn"
                     android:layout_marginLeft="15dp"/>
@@ -146,9 +154,5 @@
             </androidx.cardview.widget.CardView>
 
         </LinearLayout>
-
-
     </RelativeLayout>
-
-
 </RelativeLayout>

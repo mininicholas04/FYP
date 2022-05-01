@@ -5,18 +5,12 @@ import static androidx.camera.core.CameraX.getContext;
 import static java.lang.Math.atan2;
 import static java.lang.Math.max;
 import static java.lang.Math.min;
-import static java.lang.Math.sqrt;
-
-import android.annotation.SuppressLint;
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
-import android.graphics.RectF;
-import android.os.Build;
 import android.os.CountDownTimer;
 import android.speech.tts.TextToSpeech;
 import android.util.Log;
@@ -64,7 +58,7 @@ public class PoseGraphic extends Graphic {
   TextToSpeech t1;
   YogaProgramBeginner yogaProgramBeginner;
   private List<YogaPose> yogaArray = new ArrayList<YogaPose>();
-  CountDownTimer timer;
+  static CountDownTimer timer;
   WebView view ;
   Activity activity;
   TextView yogaCount;
@@ -80,6 +74,11 @@ public class PoseGraphic extends Graphic {
   int Right = 0 ;
   public static int l = 0;
   static int count = 0 ;
+  YogaPose yoga;
+  String good;
+  String perfect;
+
+  static void startTimer(){timer.start();}
 
   public PoseGraphic(
           GraphicOverlay overlay,
@@ -101,7 +100,6 @@ public class PoseGraphic extends Graphic {
     this.yogaProgramBeginner = yogaProgramBeginner;
     this.view = view;
     this.activity = activity;
-
 
     this.poseClassification = poseClassification;
     classificationTextPaint = new Paint();
@@ -127,6 +125,41 @@ public class PoseGraphic extends Graphic {
     @Override
   public void draw(Canvas canvas) {
       List<PoseLandmark> landmarks = pose.getAllPoseLandmarks();
+        PoseLandmark nose = pose.getPoseLandmark(PoseLandmark.NOSE);
+        PoseLandmark lefyEyeInner = pose.getPoseLandmark(PoseLandmark.LEFT_EYE_INNER);
+        PoseLandmark lefyEye = pose.getPoseLandmark(PoseLandmark.LEFT_EYE);
+        PoseLandmark leftEyeOuter = pose.getPoseLandmark(PoseLandmark.LEFT_EYE_OUTER);
+        PoseLandmark rightEyeInner = pose.getPoseLandmark(PoseLandmark.RIGHT_EYE_INNER);
+        PoseLandmark rightEye = pose.getPoseLandmark(PoseLandmark.RIGHT_EYE);
+        PoseLandmark rightEyeOuter = pose.getPoseLandmark(PoseLandmark.RIGHT_EYE_OUTER);
+        PoseLandmark leftEar = pose.getPoseLandmark(PoseLandmark.LEFT_EAR);
+        PoseLandmark rightEar = pose.getPoseLandmark(PoseLandmark.RIGHT_EAR);
+        PoseLandmark leftMouth = pose.getPoseLandmark(PoseLandmark.LEFT_MOUTH);
+        PoseLandmark rightMouth = pose.getPoseLandmark(PoseLandmark.RIGHT_MOUTH);
+
+        PoseLandmark leftShoulder = pose.getPoseLandmark(PoseLandmark.LEFT_SHOULDER);
+        PoseLandmark rightShoulder = pose.getPoseLandmark(PoseLandmark.RIGHT_SHOULDER);
+        PoseLandmark leftElbow = pose.getPoseLandmark(PoseLandmark.LEFT_ELBOW);
+        PoseLandmark rightElbow = pose.getPoseLandmark(PoseLandmark.RIGHT_ELBOW);
+        PoseLandmark leftWrist = pose.getPoseLandmark(PoseLandmark.LEFT_WRIST);
+        PoseLandmark rightWrist = pose.getPoseLandmark(PoseLandmark.RIGHT_WRIST);
+        PoseLandmark leftHip = pose.getPoseLandmark(PoseLandmark.LEFT_HIP);
+        PoseLandmark rightHip = pose.getPoseLandmark(PoseLandmark.RIGHT_HIP);
+        PoseLandmark leftKnee = pose.getPoseLandmark(PoseLandmark.LEFT_KNEE);
+        PoseLandmark rightKnee = pose.getPoseLandmark(PoseLandmark.RIGHT_KNEE);
+        PoseLandmark leftAnkle = pose.getPoseLandmark(PoseLandmark.LEFT_ANKLE);
+        PoseLandmark rightAnkle = pose.getPoseLandmark(PoseLandmark.RIGHT_ANKLE);
+
+        PoseLandmark leftPinky = pose.getPoseLandmark(PoseLandmark.LEFT_PINKY);
+        PoseLandmark rightPinky = pose.getPoseLandmark(PoseLandmark.RIGHT_PINKY);
+        PoseLandmark leftIndex = pose.getPoseLandmark(PoseLandmark.LEFT_INDEX);
+        PoseLandmark rightIndex = pose.getPoseLandmark(PoseLandmark.RIGHT_INDEX);
+        PoseLandmark leftThumb = pose.getPoseLandmark(PoseLandmark.LEFT_THUMB);
+        PoseLandmark rightThumb = pose.getPoseLandmark(PoseLandmark.RIGHT_THUMB);
+        PoseLandmark leftHeel = pose.getPoseLandmark(PoseLandmark.LEFT_HEEL);
+        PoseLandmark rightHeel = pose.getPoseLandmark(PoseLandmark.RIGHT_HEEL);
+        PoseLandmark leftFootIndex = pose.getPoseLandmark(PoseLandmark.LEFT_FOOT_INDEX);
+        PoseLandmark rightFootIndex = pose.getPoseLandmark(PoseLandmark.RIGHT_FOOT_INDEX);
       if (landmarks.isEmpty()) {
         return;
       }
@@ -187,42 +220,6 @@ public class PoseGraphic extends Graphic {
       drawPoint(canvas, pose.getPoseLandmark(PoseLandmark.LEFT_EYE_OUTER), testpaint);
       drawPoint(canvas, pose.getPoseLandmark(PoseLandmark.RIGHT_EYE_INNER), testpaint);
 
-      PoseLandmark nose = pose.getPoseLandmark(PoseLandmark.NOSE);
-      PoseLandmark lefyEyeInner = pose.getPoseLandmark(PoseLandmark.LEFT_EYE_INNER);
-      PoseLandmark lefyEye = pose.getPoseLandmark(PoseLandmark.LEFT_EYE);
-      PoseLandmark leftEyeOuter = pose.getPoseLandmark(PoseLandmark.LEFT_EYE_OUTER);
-      PoseLandmark rightEyeInner = pose.getPoseLandmark(PoseLandmark.RIGHT_EYE_INNER);
-      PoseLandmark rightEye = pose.getPoseLandmark(PoseLandmark.RIGHT_EYE);
-      PoseLandmark rightEyeOuter = pose.getPoseLandmark(PoseLandmark.RIGHT_EYE_OUTER);
-      PoseLandmark leftEar = pose.getPoseLandmark(PoseLandmark.LEFT_EAR);
-      PoseLandmark rightEar = pose.getPoseLandmark(PoseLandmark.RIGHT_EAR);
-      PoseLandmark leftMouth = pose.getPoseLandmark(PoseLandmark.LEFT_MOUTH);
-      PoseLandmark rightMouth = pose.getPoseLandmark(PoseLandmark.RIGHT_MOUTH);
-
-      PoseLandmark leftShoulder = pose.getPoseLandmark(PoseLandmark.LEFT_SHOULDER);
-      PoseLandmark rightShoulder = pose.getPoseLandmark(PoseLandmark.RIGHT_SHOULDER);
-      PoseLandmark leftElbow = pose.getPoseLandmark(PoseLandmark.LEFT_ELBOW);
-      PoseLandmark rightElbow = pose.getPoseLandmark(PoseLandmark.RIGHT_ELBOW);
-      PoseLandmark leftWrist = pose.getPoseLandmark(PoseLandmark.LEFT_WRIST);
-      PoseLandmark rightWrist = pose.getPoseLandmark(PoseLandmark.RIGHT_WRIST);
-      PoseLandmark leftHip = pose.getPoseLandmark(PoseLandmark.LEFT_HIP);
-      PoseLandmark rightHip = pose.getPoseLandmark(PoseLandmark.RIGHT_HIP);
-      PoseLandmark leftKnee = pose.getPoseLandmark(PoseLandmark.LEFT_KNEE);
-      PoseLandmark rightKnee = pose.getPoseLandmark(PoseLandmark.RIGHT_KNEE);
-      PoseLandmark leftAnkle = pose.getPoseLandmark(PoseLandmark.LEFT_ANKLE);
-      PoseLandmark rightAnkle = pose.getPoseLandmark(PoseLandmark.RIGHT_ANKLE);
-
-      PoseLandmark leftPinky = pose.getPoseLandmark(PoseLandmark.LEFT_PINKY);
-      PoseLandmark rightPinky = pose.getPoseLandmark(PoseLandmark.RIGHT_PINKY);
-      PoseLandmark leftIndex = pose.getPoseLandmark(PoseLandmark.LEFT_INDEX);
-      PoseLandmark rightIndex = pose.getPoseLandmark(PoseLandmark.RIGHT_INDEX);
-      PoseLandmark leftThumb = pose.getPoseLandmark(PoseLandmark.LEFT_THUMB);
-      PoseLandmark rightThumb = pose.getPoseLandmark(PoseLandmark.RIGHT_THUMB);
-      PoseLandmark leftHeel = pose.getPoseLandmark(PoseLandmark.LEFT_HEEL);
-      PoseLandmark rightHeel = pose.getPoseLandmark(PoseLandmark.RIGHT_HEEL);
-      PoseLandmark leftFootIndex = pose.getPoseLandmark(PoseLandmark.LEFT_FOOT_INDEX);
-      PoseLandmark rightFootIndex = pose.getPoseLandmark(PoseLandmark.RIGHT_FOOT_INDEX);
-
         drawLine(canvas, leftShoulder, leftElbow, whitePaint);
         drawLine(canvas, leftElbow, leftWrist, whitePaint);
         drawLine(canvas, leftShoulder, leftHip, whitePaint);
@@ -237,7 +234,7 @@ public class PoseGraphic extends Graphic {
         drawLine(canvas, rightKnee, rightAnkle, whitePaint);
       yogaArray = yogaProgramBeginner.getProgram();
       Log.v("Test " , l + "");
-      YogaPose yoga = yogaArray.get(l);
+      yoga = yogaArray.get(l);
       Log.v("Test 1" , l + "");
       int leftElbowAngle= (int)yoga.getBodyPart().get("leftElbowAngle");
       int leftShoulderAngle =(int) yoga.getBodyPart().get("leftShoulderAngle");
@@ -248,8 +245,8 @@ public class PoseGraphic extends Graphic {
       int rightShoulderAngle =(int) yoga.getBodyPart().get("rightShoulderAngle");
       int rightHipAngle = (int)yoga.getBodyPart().get("rightHipAngle");
       int rightKneeAngle = (int)yoga.getBodyPart().get("rightKneeAngle");
-      String good = yoga.getSpeech()[0];
-      String perfect = yoga.getSpeech()[1];
+      good = yoga.getSpeech()[0];
+      perfect = yoga.getSpeech()[1];
 
       int[] bodyAngle = {leftElbowAngle,leftShoulderAngle,leftHipAngle,leftKneeAngle,rightElbowAngle,rightShoulderAngle,rightHipAngle,rightKneeAngle};
 
@@ -266,7 +263,8 @@ public class PoseGraphic extends Graphic {
       int[] realBodyAngle = {realLeftElbowAngle,realLeftShoulderAngle,realLeftHipAngle,realLeftKneeAngle,realRightElbowAngle,realRightShoulderAngle,realRightHipAngle,realRightKneeAngle};
       Log.v("Left ",realLeftElbowAngle+"leftShoulderAngle"+realLeftShoulderAngle+"leftHipAngle"+realLeftHipAngle+"leftKneeAngle"+realLeftKneeAngle+"");
       Log.v("Right ",realRightElbowAngle+"rightShoulderAngle"+realRightShoulderAngle+"rightHipAngle"+realRightHipAngle+"rightKneeAngle"+realRightKneeAngle+"");
-        if(l < yogaArray.size()){
+
+      if(l < yogaArray.size()){
           for(int i=0; i<bodyAngle.length;i++){
               if(realBodyAngle[i] >= bodyAngle[i] && bodyAngle[i] +40 >= realBodyAngle[i]) {
                   leftPaint.setColor(Color.GREEN);
@@ -311,7 +309,6 @@ public class PoseGraphic extends Graphic {
                 }
 
               timer =  new CountDownTimer(1000, 1000) {
-
                   public void onTick(long millisUntilFinished) {
                       if(realLeftElbowAngle>=leftElbowAngle && leftElbowAngle+40 >= realLeftElbowAngle &&
                               realLeftShoulderAngle>=leftShoulderAngle && leftShoulderAngle+40 >= realLeftShoulderAngle &&
@@ -336,9 +333,9 @@ public class PoseGraphic extends Graphic {
                               t1.speak(perfect, TextToSpeech.QUEUE_FLUSH, null,null);
                               t1.playSilentUtterance(4000,TextToSpeech.QUEUE_ADD,null);
                           }
-                          if(count ==1500 ){
+                          if(count ==1500){
                               if(l < yogaArray.size()){
-                              l++;
+                                  l++;
                                   count = 0;
                                   yogacount = 1500;
                                   activity.runOnUiThread(new Runnable(){
@@ -375,7 +372,8 @@ public class PoseGraphic extends Graphic {
                       }
                     */
                   }
-              }.start();
+              };
+              startTimer();
 
           }
          /* else if(Left>=angle1 && angle1+30 >= Left && Right <= angle2){
@@ -415,6 +413,7 @@ public class PoseGraphic extends Graphic {
       //}
       //}).start();
     };
+
 
   static int getAngle(PoseLandmark firstPoint, PoseLandmark midPoint, PoseLandmark lastPoint) {
     double result =

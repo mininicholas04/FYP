@@ -6,7 +6,9 @@ import androidx.appcompat.app.ActionBar;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
+import android.graphics.text.TextRunShaper;
 import android.os.Bundle;
 import androidx.annotation.Nullable;
 import androidx.annotation.StringRes;
@@ -14,6 +16,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.KeyEvent;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
@@ -22,6 +25,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.fyp_app.CreateAcc;
 import com.example.fyp_app.MainActivity;
 import com.example.fyp_app.R;
 import com.example.fyp_app.turn_on_notifi;
@@ -41,10 +45,12 @@ public class LoginActivity extends AppCompatActivity {
         loginViewModel = new ViewModelProvider(this, new LoginViewModelFactory())
                 .get(LoginViewModel.class);
 
+
         final EditText usernameEditText = findViewById(R.id.user_email);
         final EditText passwordEditText = findViewById(R.id.user_password);
         final Button loginButton = findViewById(R.id.btn_login);
         final Button skipButton = findViewById(R.id.skip);
+        TextView btn_createAcc = (TextView) findViewById(R.id.btn_createAcc);
         //final ProgressBar loadingProgressBar = findViewById(R.id.loading);
         skipButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -125,6 +131,14 @@ public class LoginActivity extends AppCompatActivity {
                 //loadingProgressBar.setVisibility(View.VISIBLE);
                 loginViewModel.login(usernameEditText.getText().toString(),
                         passwordEditText.getText().toString());
+            }
+        });
+        btn_createAcc.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View arg0, MotionEvent arg1) {
+                Intent i = new Intent(getApplicationContext(), CreateAcc.class);
+                startActivity(i);
+                return false;
             }
         });
     }
