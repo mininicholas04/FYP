@@ -59,22 +59,26 @@
         android:id="@+id/btn_notifi"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_below="@+id/layout1"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
         android:background="@drawable/button_roundcorner"
         android:text="Turn on"
         android:textColor="@android:color/white"
-        android:textSize="15dp"
-        android:layout_below="@+id/layout1" />
+        android:textSize="15dp" />
 
-    <TextView
+    <Button
+        android:id="@+id/notNowBut"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Not now"
-        android:layout_centerHorizontal="true"
-        android:layout_margin="10dp"
         android:layout_below="@+id/btn_notifi"
-        android:onClick="toHomePage" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@color/zxing_transparent"
+        android:text="Not now" />
 
 
 </RelativeLayout>

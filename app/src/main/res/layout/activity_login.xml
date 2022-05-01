@@ -6,17 +6,17 @@
     android:layout_width="match_parent"
     android:background="@drawable/banner13"
     android:layout_height="match_parent">
-<Button
-    android:id="@+id/skip"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="Skip"
-    android:background="@color/zxing_transparent"
-    android:textSize="10dp"
-    android:textColor="@color/light_grey"
-    android:layout_alignParentEnd="true"/>
 
-    <RelativeLayout
+    <Button
+        android:id="@+id/skip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:background="@color/zxing_transparent"
+        android:text="Skip"
+        android:textColor="@color/light_grey"
+        android:textSize="10dp" />
+  <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginStart="70dp"

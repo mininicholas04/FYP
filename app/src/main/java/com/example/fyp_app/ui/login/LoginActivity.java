@@ -28,6 +28,7 @@ import android.widget.Toast;
 import com.example.fyp_app.CreateAcc;
 import com.example.fyp_app.MainActivity;
 import com.example.fyp_app.R;
+import com.example.fyp_app.turn_on_notifi;
 import com.example.fyp_app.ui.login.LoginViewModel;
 import com.example.fyp_app.ui.login.LoginViewModelFactory;
 
@@ -54,7 +55,7 @@ public class LoginActivity extends AppCompatActivity {
         skipButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                startActivity(new Intent(getApplicationContext(), turn_on_notifi.class));
             }
         });
         loginViewModel.getLoginFormState().observe(this, new Observer<LoginFormState>() {

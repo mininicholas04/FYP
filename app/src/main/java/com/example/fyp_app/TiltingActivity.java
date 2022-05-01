@@ -127,7 +127,7 @@ public class TiltingActivity extends AppCompatActivity implements SensorEventLis
         float roll = orientation[2];
         int rollDeg = (int) Math.round(Math.toDegrees(roll));
         //Log.d(TAG, "deg=" + rollDeg + " power=" + power);
-        new Thread(new Runnable() {
+        /*new Thread(new Runnable() {
             @Override
             public void run() {
                 runOnUiThread(new Runnable() {
@@ -139,6 +139,8 @@ public class TiltingActivity extends AppCompatActivity implements SensorEventLis
 
             }
         }).start();
+
+         */
 
         if( -65>=rollDeg && rollDeg >= -71){
             tilting.setBackgroundColor(Color.GREEN);
