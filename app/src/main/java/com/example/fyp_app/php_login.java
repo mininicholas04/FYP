@@ -30,8 +30,8 @@ public class php_login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        login_email = (EditText)findViewById(R.id.login_email);
-        login_password = (EditText)findViewById(R.id.login_password);
+        login_email = (EditText)findViewById(R.id.user_email);
+        login_password = (EditText)findViewById(R.id.user_password);
         btn_login = (Button) findViewById(R.id.btn_login);
         btn_createAcc = (TextView)findViewById(R.id.btn_createAcc);
         final Button skipButton = findViewById(R.id.skip);

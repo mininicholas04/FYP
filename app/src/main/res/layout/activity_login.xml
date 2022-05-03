@@ -39,14 +39,14 @@
             android:layout_below="@+id/welcome"
             android:text="Sign in to continue" />
 
-        <EditText
-            android:id="@+id/user_email"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="150dp"
-            android:background="@drawable/edit_text_design"
-            android:hint="Email"
-            android:padding="8dp" />
+      <EditText
+          android:id="@+id/user_email"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="150dp"
+          android:background="@drawable/edit_text_design"
+          android:hint="Email"
+          android:padding="8dp" />
 
         <EditText
             android:id="@+id/user_password"
