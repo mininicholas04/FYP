@@ -75,6 +75,7 @@ public class php_login extends AppCompatActivity {
                                     if (result.equals( "Login Success")){
                                         Toast.makeText(getApplicationContext(),result,Toast.LENGTH_SHORT).show();
                                         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                                        //intent.putExtra("key", data[0]);
                                         startActivity(intent);
                                         finish();
                                     }else{
