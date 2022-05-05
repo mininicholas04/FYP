@@ -124,6 +124,12 @@ public class PoseGraphic extends Graphic {
 
     @Override
   public void draw(Canvas canvas) {
+        if(l == 6){
+            Intent intent = new Intent(getApplicationContext(), BreathCompleted.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            getApplicationContext().startActivity(intent);
+        }
+
       List<PoseLandmark> landmarks = pose.getAllPoseLandmarks();
         PoseLandmark nose = pose.getPoseLandmark(PoseLandmark.NOSE);
         PoseLandmark lefyEyeInner = pose.getPoseLandmark(PoseLandmark.LEFT_EYE_INNER);
@@ -163,11 +169,7 @@ public class PoseGraphic extends Graphic {
       if (landmarks.isEmpty()) {
         return;
       }
-      if(l == 6){
-          Intent intent = new Intent(getApplicationContext(), BreathCompleted.class);
-          intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-          getApplicationContext().startActivity(intent);
-      }
+
       // Draw pose classification text.
       float classificationX = POSE_CLASSIFICATION_TEXT_SIZE * 0.5f;
       for (int i = 0; i < poseClassification.size(); i++) {
