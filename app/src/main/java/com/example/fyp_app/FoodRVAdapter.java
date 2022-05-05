@@ -11,8 +11,6 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.fyp_app.R;
-import com.example.fyp_app.FoodModal;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -44,13 +42,16 @@ public class FoodRVAdapter extends RecyclerView.Adapter<FoodRVAdapter.ViewHolder
         FoodModal userModal = userModalArrayList.get(position);
 
         // on below line we are setting data to our text view.
-        holder.firstNameTV.setText(userModal.getTitle());
-        holder.lastNameTV.setText("Fat");
-        holder.emailTV.setText(userModal.getAmount().toString()+"g");
+        holder.foodRecommendTitle.setText(userModal.getTitle());
+
+        holder.caloriesKcal.setText(userModal.getCalories().toString()+"kcal");
+        holder.idTVProteinAmount.setText(userModal.getProtein().toString()+"g");
+        holder.idTVFatAmount.setText(userModal.getFat().toString()+"g");
+        holder.idTVCarbohydratesAmount.setText(userModal.getCarbohydrates().toString()+"g");
 
         // on below line we are loading our image
         // from url in our image view using picasso.
-        Picasso.get().load(userModal.getImage()).into(holder.userIV);
+        Picasso.get().load(userModal.getImage()).into(holder.foodRecommendImage);
     }
 
     @Override
@@ -61,17 +62,20 @@ public class FoodRVAdapter extends RecyclerView.Adapter<FoodRVAdapter.ViewHolder
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         // creating a variable for our text view and image view.
-        private TextView firstNameTV, lastNameTV, emailTV;
-        private ImageView userIV;
+        private TextView foodRecommendTitle, idTVProteinAmount, caloriesKcal,idTVFatAmount,idTVCarbohydratesAmount;
+        private ImageView foodRecommendImage;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
             // initializing our variables.
-            firstNameTV = itemView.findViewById(R.id.idTVFirstName);
-            lastNameTV = itemView.findViewById(R.id.idTVLastName);
-            emailTV = itemView.findViewById(R.id.idTVEmail);
-            userIV = itemView.findViewById(R.id.idIVUser);
+            foodRecommendTitle = itemView.findViewById(R.id.foodRecommendTitle);
+            foodRecommendImage = itemView.findViewById(R.id.foodRecommendImage);
+
+            caloriesKcal = itemView.findViewById(R.id.caloriesKcal);
+            idTVProteinAmount = itemView.findViewById(R.id.idTVProteinAmount);
+            idTVFatAmount = itemView.findViewById(R.id.idTVFatAmount);
+            idTVCarbohydratesAmount = itemView.findViewById(R.id.idTVCarbohydratesAmount);
         }
     }
 }

@@ -49,11 +49,11 @@
 
                 <Button
                     android:id="@+id/moreInfo"
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:layout_gravity="center"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="bottom"
                     android:onClick="moreInfo_function"
-                    android:text="More"
+                    android:text=""
                     tools:ignore="TouchTargetSizeCheck" />
 
             </TableRow>

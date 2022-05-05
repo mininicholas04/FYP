@@ -19,12 +19,18 @@ public class FoodNutrientInfoAdapter extends RecyclerView.Adapter<FoodNutrientIn
 
     public FoodNutrientInfoAdapter(JSONObject jsonObject) {
         localDataset = jsonObject;
+        localDataset.remove("id");
+        localDataset.remove("title");
+        localDataset.remove("image");
+        localDataset.remove("imageType");
         String temp = localDataset.toString();
+        temp = temp.replace("{","");
+        temp = temp.replace("}","");
         String[] dataArray = temp.split(",");
         for (int i = 0; i < dataArray.length; i++) {
-            if (i == 0 || i == 1 || i == 2 || i == 3 || i == 8) {
+            /*if (i == 0 || i == 1 || i == 2 || i == 3 || i == 8) {
                 continue;
-            }
+            }*/
             System.out.println(dataArray[i]);
             String strNew = dataArray[i].replace("\"", "");
             String[] tempStrings = strNew.split(":");
