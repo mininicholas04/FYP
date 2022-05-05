@@ -34,8 +34,8 @@ public class turn_on_notifi extends AppCompatActivity {
             public void onClick(View v) {
                 Calendar calendar = Calendar.getInstance();
 
-                calendar.set(Calendar.HOUR_OF_DAY,9);
-                calendar.set(Calendar.MINUTE,48);
+                calendar.set(Calendar.HOUR_OF_DAY,3);
+                calendar.set(Calendar.MINUTE,52);
 
 
                 Intent intent = new Intent(getApplicationContext(), Notification_reciever.class);
@@ -47,8 +47,10 @@ public class turn_on_notifi extends AppCompatActivity {
 
                 long tenSecondsInMills = 1000 * 10;
 
-                alarmManager.setRepeating(AlarmManager.RTC_WAKEUP,
-                        calendar.getTimeInMillis(),AlarmManager.INTERVAL_DAY, pendingIntent);
+                alarmManager.setExact(AlarmManager.RTC_WAKEUP,
+                             timeAtButtonClick+tenSecondsInMills, pendingIntent);
+                ///alarmManager.setRepeating(AlarmManager.RTC_WAKEUP,
+                  //      timeAtButtonClick+tenSecondsInMills,AlarmManager.INTERVAL_DAY, pendingIntent);
 
 
 

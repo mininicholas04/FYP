@@ -24,12 +24,12 @@
         android:id="@+id/text_tutor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Tutorial"
-        android:layout_marginTop="150dp"
         android:layout_marginLeft="20dp"
+        android:layout_marginTop="150dp"
+        android:text="Tutorial"
         android:textColor="@color/white"
-        android:textStyle="bold"
-        android:textSize="30dp"/>
+        android:textSize="30dp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/text1"

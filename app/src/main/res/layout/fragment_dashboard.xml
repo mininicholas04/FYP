@@ -279,11 +279,11 @@
             android:id="@+id/text34"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Nutritinal facts"
             android:layout_below="@+id/scroll2"
-            android:textStyle="bold"
             android:layout_marginTop="10dp"
-            android:textSize="20dp" />
+            android:text="Nutritional facts"
+            android:textSize="20dp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/text234"
