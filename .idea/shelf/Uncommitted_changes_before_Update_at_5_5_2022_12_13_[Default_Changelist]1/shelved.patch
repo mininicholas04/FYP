@@ -1,0 +1,168 @@
+Index: app/src/main/java/com/example/fyp_app/MainActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.fyp_app;\r\n\r\nimport android.content.Intent;\r\nimport android.os.Bundle;\r\nimport android.view.View;\r\nimport android.widget.Button;\r\nimport android.widget.ImageView;\r\nimport android.widget.Spinner;\r\n\r\nimport com.google.android.material.bottomnavigation.BottomNavigationView;\r\nimport com.example.fyp_app.R;\r\n\r\nimport androidx.appcompat.app.ActionBar;\r\nimport androidx.appcompat.app.AppCompatActivity;\r\nimport androidx.navigation.NavController;\r\nimport androidx.navigation.Navigation;\r\nimport androidx.navigation.ui.AppBarConfiguration;\r\nimport androidx.navigation.ui.NavigationUI;\r\n\r\npublic class MainActivity extends AppCompatActivity {\r\n\r\n\r\n    @Override\r\n    protected void onCreate(Bundle savedInstanceState) {\r\n        ActionBar actionBar = getSupportActionBar();\r\n        actionBar.hide();\r\n        super.onCreate(savedInstanceState);\r\n        setContentView(R.layout.activity_main);\r\n        BottomNavigationView navView = findViewById(R.id.nav_view);\r\n        // Passing each menu ID as a set of Ids because each\r\n        // menu should be considered as top level destinations.\r\n        AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(\r\n                R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications)\r\n                .build();\r\n        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);\r\n        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);\r\n        NavigationUI.setupWithNavController(navView, navController);\r\n\r\n    }\r\n\r\n\r\n    //Use text as a button\r\n    /*public void CreateAcc(View v) {\r\n        //\r\n    }\r\n     */\r\n\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/fyp_app/MainActivity.java b/app/src/main/java/com/example/fyp_app/MainActivity.java
+--- a/app/src/main/java/com/example/fyp_app/MainActivity.java	
++++ b/app/src/main/java/com/example/fyp_app/MainActivity.java	
+@@ -2,13 +2,18 @@
+ 
+ import android.content.Intent;
+ import android.os.Bundle;
++import android.os.Handler;
++import android.os.Looper;
+ import android.view.View;
+ import android.widget.Button;
+ import android.widget.ImageView;
+ import android.widget.Spinner;
++import android.widget.TextView;
++import android.widget.Toast;
+ 
+ import com.google.android.material.bottomnavigation.BottomNavigationView;
+ import com.example.fyp_app.R;
++import com.vishnusivadas.advanced_httpurlconnection.PutData;
+ 
+ import androidx.appcompat.app.ActionBar;
+ import androidx.appcompat.app.AppCompatActivity;
+@@ -18,7 +23,7 @@
+ import androidx.navigation.ui.NavigationUI;
+ 
+ public class MainActivity extends AppCompatActivity {
+-
++    private String email;
+ 
+     @Override
+     protected void onCreate(Bundle savedInstanceState) {
+@@ -27,6 +32,7 @@
+         super.onCreate(savedInstanceState);
+         setContentView(R.layout.activity_main);
+         BottomNavigationView navView = findViewById(R.id.nav_view);
++        //TextView username = findViewById(R.id.username);
+         // Passing each menu ID as a set of Ids because each
+         // menu should be considered as top level destinations.
+         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
+@@ -36,13 +42,34 @@
+         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
+         NavigationUI.setupWithNavController(navView, navController);
+ 
+-    }
+-
++       /* Bundle extras = getIntent().getExtras();
++        if (extras != null) {
++            email = extras.getString("key");
++            Handler handler = new Handler(Looper.getMainLooper());
++            handler.post(new Runnable() {
++                @Override
++                public void run() {
++                    //Starting Write and Read data with URL
++                    //Creating array for parameters
++                    String[] field = new String[1];
++                    field[0] = "email";
++                    //Creating array for data
++                    String[] data = new String[1];
++                    data[0] = email;
++                    PutData putData = new PutData("http://192.168.50.226/LoginRegister/getName.php", "POST", field, data);
++                    if (putData.startPut()) {
++                        if (putData.onComplete()) {
++                            String result = putData.getResult();
++                            username.setText("Hello "+result);
++
++                        }
++                    }
+ 
+-    //Use text as a button
+-    /*public void CreateAcc(View v) {
+-        //
+-    }
+-     */
++                }
++            });
++
+ 
++        }*/
++
++    }
+ }
+\ No newline at end of file
+Index: app/src/main/res/layout/fragment_home.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<ScrollView xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"wrap_content\"\r\n    android:fillViewport=\"false\">\r\n\r\n<RelativeLayout\r\n    xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\"\r\n    tools:context=\".ui.home.HomeFragment\">\r\n\r\n    <ImageView\r\n        android:id=\"@+id/banner\"\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"240dp\"\r\n        android:scaleType=\"centerCrop\"\r\n        android:adjustViewBounds=\"true\"\r\n        android:src=\"@drawable/banner1\" />\r\n\r\n    <TextView\r\n        android:id=\"@+id/text_tutor\"\r\n        android:layout_width=\"wrap_content\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:text=\"Tutorial\"\r\n        android:layout_marginTop=\"150dp\"\r\n        android:layout_marginLeft=\"20dp\"\r\n        android:textColor=\"@color/white\"\r\n        android:textStyle=\"bold\"\r\n        android:textSize=\"30dp\"/>\r\n\r\n    <TextView\r\n        android:id=\"@+id/text1\"\r\n        android:layout_width=\"wrap_content\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:textColor=\"@color/white\"\r\n        android:layout_marginLeft=\"20dp\"\r\n        android:text=\"Good technique is key for effective training.\r\nPick a tutorial to learn and maintain the\r\nproper technique.\"\r\n        android:layout_below=\"@+id/text_tutor\" />\r\n\r\n    <RelativeLayout\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"match_parent\"\r\n        android:layout_margin=\"20dp\"\r\n        android:layout_below=\"@+id/banner\">\r\n    <TextView\r\n        android:id=\"@+id/text_recom\"\r\n        android:layout_width=\"wrap_content\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:text=\"Recommend\"\r\n        android:textStyle=\"bold\"\r\n        android:textSize=\"20dp\"\r\n        />\r\n\r\n    <androidx.cardview.widget.CardView\r\n        android:id=\"@+id/recom1\"\r\n        android:layout_width=\"150dp\"\r\n        android:layout_height=\"150dp\"\r\n        app:cardElevation=\"10dp\"\r\n        android:layout_marginTop=\"20dp\"\r\n        android:layout_marginLeft=\"10dp\"\r\n        android:layout_below=\"@+id/text_recom\"\r\n        app:cardBackgroundColor=\"@color/white\"\r\n        app:cardCornerRadius=\"30dp\">\r\n        <LinearLayout\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"match_parent\"\r\n            android:orientation=\"vertical\" >\r\n            <ImageView\r\n                android:layout_width=\"match_parent\"\r\n                android:layout_height=\"100dp\"\r\n                android:src=\"@drawable/yoga1\"\r\n                android:scaleType=\"centerCrop\"/>\r\n            <TextView\r\n                android:layout_width=\"match_parent\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:text=\"Quick Morning\"\r\n                android:textAlignment=\"center\"\r\n                android:layout_marginTop=\"5dp\" />\r\n            <TextView\r\n                android:layout_width=\"match_parent\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:text=\"Smile Yoga\"\r\n                android:textAlignment=\"center\"\r\n                android:textSize=\"15sp\"/>\r\n        </LinearLayout>\r\n    </androidx.cardview.widget.CardView>\r\n\r\n    <androidx.cardview.widget.CardView\r\n        android:id=\"@+id/recom2\"\r\n        android:layout_width=\"150dp\"\r\n        android:layout_height=\"150dp\"\r\n        app:cardElevation=\"10dp\"\r\n        android:layout_marginTop=\"20dp\"\r\n        android:layout_marginLeft=\"30dp\"\r\n        android:layout_toRightOf=\"@+id/recom1\"\r\n        android:layout_below=\"@+id/text_recom\"\r\n        app:cardBackgroundColor=\"@color/white\"\r\n        app:cardCornerRadius=\"30dp\">\r\n        <LinearLayout\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"match_parent\"\r\n            android:orientation=\"vertical\">\r\n            <ImageView\r\n                android:layout_width=\"match_parent\"\r\n                android:layout_height=\"100dp\"\r\n                android:src=\"@drawable/yoga2\"\r\n                android:scaleType=\"centerCrop\"/>\r\n            <TextView\r\n                android:layout_width=\"match_parent\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:text=\"All-Around,\"\r\n                android:textAlignment=\"center\"\r\n                android:layout_marginTop=\"5dp\" />\r\n            <TextView\r\n                android:layout_width=\"match_parent\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:text=\"Feel-Good Flow\"\r\n                android:textAlignment=\"center\"\r\n                android:textSize=\"15sp\"/>\r\n        </LinearLayout>\r\n    </androidx.cardview.widget.CardView>\r\n\r\n    <TextView\r\n        android:id=\"@+id/text_body\"\r\n        android:layout_width=\"wrap_content\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:text=\"By body part\"\r\n        android:textStyle=\"bold\"\r\n        android:textSize=\"20dp\"\r\n        android:layout_marginTop=\"20dp\"\r\n        android:layout_below=\"@+id/recom2\"/>\r\n\r\n    <HorizontalScrollView\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"150dp\"\r\n        android:fillViewport=\"true\"\r\n        android:layout_marginTop=\"20dp\"\r\n        android:layout_below=\"@id/text_body\">\r\n\r\n        <LinearLayout\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"match_parent\"\r\n            android:orientation=\"horizontal\" >\r\n\r\n    <androidx.cardview.widget.CardView\r\n        android:id=\"@+id/body_arms\"\r\n        android:layout_width=\"130dp\"\r\n        android:layout_height=\"130dp\"\r\n        app:cardElevation=\"10dp\"\r\n        app:cardBackgroundColor=\"@color/white\"\r\n        app:cardCornerRadius=\"30dp\">\r\n        <ImageView\r\n            android:id=\"@+id/yogaArms\"\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"match_parent\"\r\n            android:src=\"@drawable/arms\"\r\n            android:scaleType=\"centerCrop\"\r\n            android:onClick=\"yogaArms\"/>\r\n\r\n        <TextView\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_marginLeft=\"15dp\"\r\n            android:layout_marginTop=\"15dp\"\r\n            android:text=\"Arms\"\r\n            android:textSize=\"15sp\" />\r\n    </androidx.cardview.widget.CardView>\r\n    <androidx.cardview.widget.CardView\r\n        android:id=\"@+id/body_back\"\r\n        android:layout_width=\"130dp\"\r\n        android:layout_height=\"130dp\"\r\n        app:cardElevation=\"10dp\"\r\n        android:layout_marginLeft=\"30dp\"\r\n        app:cardBackgroundColor=\"@color/white\"\r\n        app:cardCornerRadius=\"30dp\">\r\n        <ImageView\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"match_parent\"\r\n            android:src=\"@drawable/back\"\r\n            android:scaleType=\"centerCrop\"/>\r\n        <TextView\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:text=\"Back\"\r\n            android:layout_marginLeft=\"70dp\"\r\n            android:layout_marginTop=\"40dp\"\r\n            android:textSize=\"15sp\" />\r\n    </androidx.cardview.widget.CardView>\r\n\r\n    <androidx.cardview.widget.CardView\r\n        android:id=\"@+id/body_core\"\r\n        android:layout_width=\"130dp\"\r\n        android:layout_height=\"130dp\"\r\n        app:cardElevation=\"10dp\"\r\n        android:layout_marginLeft=\"30dp\"\r\n        app:cardBackgroundColor=\"@color/white\"\r\n        app:cardCornerRadius=\"30dp\">\r\n        <ImageView\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"match_parent\"\r\n            android:src=\"@drawable/core\"\r\n            android:scaleType=\"centerCrop\"/>\r\n        <TextView\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:text=\"Core\"\r\n            android:layout_marginLeft=\"15dp\"\r\n            android:layout_marginTop=\"10dp\"\r\n            android:textSize=\"15sp\" />\r\n    </androidx.cardview.widget.CardView>\r\n\r\n    <androidx.cardview.widget.CardView\r\n        android:id=\"@+id/body_psoas\"\r\n        android:layout_width=\"130dp\"\r\n        android:layout_height=\"130dp\"\r\n        app:cardElevation=\"10dp\"\r\n        android:layout_marginLeft=\"30dp\"\r\n        app:cardBackgroundColor=\"@color/white\"\r\n        app:cardCornerRadius=\"30dp\">\r\n        <ImageView\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"match_parent\"\r\n            android:src=\"@drawable/psoas\"\r\n            android:scaleType=\"centerCrop\"/>\r\n        <TextView\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:text=\"Psoas\"\r\n            android:layout_marginLeft=\"70dp\"\r\n            android:layout_marginTop=\"73dp\"\r\n            android:textSize=\"15sp\" />\r\n    </androidx.cardview.widget.CardView>\r\n        </LinearLayout>\r\n    </HorizontalScrollView>\r\n    </RelativeLayout>\r\n\r\n\r\n</RelativeLayout>\r\n\r\n</ScrollView>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/fragment_home.xml b/app/src/main/res/layout/fragment_home.xml
+--- a/app/src/main/res/layout/fragment_home.xml	
++++ b/app/src/main/res/layout/fragment_home.xml	
+@@ -24,12 +24,12 @@
+         android:id="@+id/text_tutor"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+-        android:text="Tutorial"
+-        android:layout_marginTop="150dp"
+         android:layout_marginLeft="20dp"
++        android:layout_marginTop="150dp"
++        android:text="Tutorial"
+         android:textColor="@color/white"
+-        android:textStyle="bold"
+-        android:textSize="30dp"/>
++        android:textSize="30dp"
++        android:textStyle="bold" />
+ 
+     <TextView
+         android:id="@+id/text1"
+Index: app/src/main/java/com/example/fyp_app/turn_on_notifi.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.fyp_app;\r\n\r\nimport androidx.appcompat.app.ActionBar;\r\nimport androidx.appcompat.app.AppCompatActivity;\r\nimport androidx.core.app.NotificationCompat;\r\nimport androidx.core.app.NotificationManagerCompat;\r\n\r\nimport android.app.AlarmManager;\r\nimport android.app.Notification;\r\nimport android.app.NotificationChannel;\r\nimport android.app.NotificationManager;\r\nimport android.app.PendingIntent;\r\nimport android.content.Intent;\r\nimport android.os.Build;\r\nimport android.os.Bundle;\r\nimport android.view.View;\r\nimport android.widget.Button;\r\n\r\n\r\nimport java.util.Calendar;\r\n\r\npublic class turn_on_notifi extends AppCompatActivity {\r\n\r\n    @Override\r\n    protected void onCreate(Bundle savedInstanceState) {\r\n        ActionBar actionBar = getSupportActionBar();\r\n        actionBar.hide();\r\n        super.onCreate(savedInstanceState);\r\n        setContentView(R.layout.activity_turn_on_notifi);\r\n        createNotificationChannel();\r\n        Button btn_notifi = (Button) findViewById(R.id.btn_notifi);\r\n        Button notNowBut = (Button) findViewById(R.id.notNowBut);\r\n        btn_notifi.setOnClickListener(new View.OnClickListener() {\r\n            public void onClick(View v) {\r\n                Calendar calendar = Calendar.getInstance();\r\n\r\n                calendar.set(Calendar.HOUR_OF_DAY,9);\r\n                calendar.set(Calendar.MINUTE,48);\r\n\r\n\r\n                Intent intent = new Intent(getApplicationContext(), Notification_reciever.class);\r\n                intent.setAction(\"MY_NOTIFICATION_MESSAGE\");\r\n                PendingIntent pendingIntent = PendingIntent.getBroadcast(getApplicationContext(), 100, intent, PendingIntent.FLAG_UPDATE_CURRENT);\r\n                AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);\r\n\r\n                long timeAtButtonClick = System.currentTimeMillis();\r\n\r\n                long tenSecondsInMills = 1000 * 10;\r\n\r\n                alarmManager.setRepeating(AlarmManager.RTC_WAKEUP,\r\n                        calendar.getTimeInMillis(),AlarmManager.INTERVAL_DAY, pendingIntent);\r\n\r\n\r\n\r\n                Intent intent1 = new Intent(getApplicationContext(), MainActivity.class);\r\n                startActivity(intent1);\r\n            }\r\n        });\r\n\r\n        notNowBut.setOnClickListener(new View.OnClickListener() {\r\n\r\n            @Override\r\n            public void onClick(View view) {\r\n                Intent intent = new Intent(getApplicationContext(), MainActivity.class);\r\n                startActivity(intent);\r\n                finish();\r\n            }\r\n        });\r\n\r\n\r\n    }\r\n\r\n    private void createNotificationChannel() {\r\n        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){\r\n            int importance = NotificationManager.IMPORTANCE_DEFAULT;\r\n            NotificationChannel channel = new NotificationChannel(\"My notification\",\"abc\",importance);\r\n            channel.setDescription(\"abc\");\r\n\r\n            NotificationManager notificationManager =getSystemService(NotificationManager.class);\r\n            notificationManager.createNotificationChannel(channel);\r\n\r\n        }\r\n\r\n    }\r\n\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/fyp_app/turn_on_notifi.java b/app/src/main/java/com/example/fyp_app/turn_on_notifi.java
+--- a/app/src/main/java/com/example/fyp_app/turn_on_notifi.java	
++++ b/app/src/main/java/com/example/fyp_app/turn_on_notifi.java	
+@@ -34,8 +34,8 @@
+             public void onClick(View v) {
+                 Calendar calendar = Calendar.getInstance();
+ 
+-                calendar.set(Calendar.HOUR_OF_DAY,9);
+-                calendar.set(Calendar.MINUTE,48);
++                calendar.set(Calendar.HOUR_OF_DAY,3);
++                calendar.set(Calendar.MINUTE,52);
+ 
+ 
+                 Intent intent = new Intent(getApplicationContext(), Notification_reciever.class);
+@@ -47,8 +47,10 @@
+ 
+                 long tenSecondsInMills = 1000 * 10;
+ 
+-                alarmManager.setRepeating(AlarmManager.RTC_WAKEUP,
+-                        calendar.getTimeInMillis(),AlarmManager.INTERVAL_DAY, pendingIntent);
++                alarmManager.setExact(AlarmManager.RTC_WAKEUP,
++                             timeAtButtonClick+tenSecondsInMills, pendingIntent);
++                ///alarmManager.setRepeating(AlarmManager.RTC_WAKEUP,
++                  //      timeAtButtonClick+tenSecondsInMills,AlarmManager.INTERVAL_DAY, pendingIntent);
+ 
+ 
+ 
+Index: app/src/main/java/com/example/fyp_app/php_login.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.fyp_app;\r\n\r\nimport android.content.Intent;\r\nimport android.os.Bundle;\r\nimport android.os.Handler;\r\nimport android.os.Looper;\r\nimport android.view.View;\r\nimport android.widget.Button;\r\nimport android.widget.EditText;\r\nimport android.widget.ImageButton;\r\nimport android.widget.Spinner;\r\nimport android.widget.TextView;\r\nimport android.widget.Toast;\r\n\r\nimport androidx.appcompat.app.ActionBar;\r\nimport androidx.appcompat.app.AppCompatActivity;\r\n\r\nimport com.vishnusivadas.advanced_httpurlconnection.PutData;\r\n\r\npublic class php_login extends AppCompatActivity {\r\n\r\n    EditText login_email, login_password;\r\n    Button btn_login;\r\n    TextView btn_createAcc;\r\n\r\n    @Override\r\n    protected void onCreate(Bundle savedInstanceState){\r\n        ActionBar actionBar = getSupportActionBar();\r\n        actionBar.hide();\r\n        super.onCreate(savedInstanceState);\r\n        setContentView(R.layout.activity_login);\r\n\r\n        login_email = (EditText)findViewById(R.id.user_email);\r\n        login_password = (EditText)findViewById(R.id.user_password);\r\n        btn_login = (Button) findViewById(R.id.btn_login);\r\n        btn_createAcc = (TextView)findViewById(R.id.btn_createAcc);\r\n        final Button skipButton = findViewById(R.id.skip);\r\n\r\n        btn_createAcc.setOnClickListener(new View.OnClickListener() {\r\n            @Override\r\n            public void onClick(View view) {\r\n                Intent intent = new Intent(getApplicationContext(), php_signup.class);\r\n                startActivity(intent);\r\n                finish();\r\n            }\r\n        });\r\n\r\n        btn_login.setOnClickListener(new View.OnClickListener() {\r\n            @Override\r\n            public void onClick(View v) {\r\n                String email, password;\r\n\r\n                email = String.valueOf(login_email.getText());\r\n                password = String.valueOf(login_password.getText());\r\n\r\n                if (!email.equals(\"\") && !password.equals(\"\")) {\r\n                    //Start ProgressBar first (Set visibility VISIBLE)\r\n                    Handler handler = new Handler(Looper.getMainLooper());\r\n                    handler.post(new Runnable() {\r\n                        @Override\r\n                        public void run() {\r\n                            //Starting Write and Read data with URL\r\n                            //Creating array for parameters\r\n                            String[] field = new String[2];\r\n                            field[0] = \"email\";\r\n                            field[1] = \"password\";\r\n                            //Creating array for data\r\n                            String[] data = new String[2];\r\n                            data[0] = email;\r\n                            data[1] = password;\r\n                            PutData putData = new PutData(\"http://192.168.50.226/LoginRegister/login.php\", \"POST\", field, data);\r\n                            if (putData.startPut()) {\r\n                                if (putData.onComplete()) {\r\n                                    String result = putData.getResult();\r\n                                    if (result.equals( \"Login Success\")){\r\n                                        Toast.makeText(getApplicationContext(),result,Toast.LENGTH_SHORT).show();\r\n                                        Intent intent = new Intent(getApplicationContext(), MainActivity.class);\r\n                                        startActivity(intent);\r\n                                        finish();\r\n                                    }else{\r\n                                        Toast.makeText(getApplicationContext(),result,Toast.LENGTH_SHORT).show();\r\n                                    }\r\n                                    //End ProgressBar (Set visibility to GONE)\r\n                                }\r\n                            }\r\n                            //End Write and Read data with URL\r\n                        }\r\n                    });\r\n                } else {\r\n                    Toast.makeText(getApplicationContext(), \"All fields requried\", Toast.LENGTH_SHORT).show();\r\n                }\r\n            }\r\n        });\r\n        skipButton.setOnClickListener(new View.OnClickListener() {\r\n            @Override\r\n            public void onClick(View view) {\r\n                startActivity(new Intent(getApplicationContext(), turn_on_notifi.class));\r\n            }\r\n        });\r\n\r\n\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/fyp_app/php_login.java b/app/src/main/java/com/example/fyp_app/php_login.java
+--- a/app/src/main/java/com/example/fyp_app/php_login.java	
++++ b/app/src/main/java/com/example/fyp_app/php_login.java	
+@@ -75,6 +75,7 @@
+                                     if (result.equals( "Login Success")){
+                                         Toast.makeText(getApplicationContext(),result,Toast.LENGTH_SHORT).show();
+                                         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
++                                        //intent.putExtra("key", data[0]);
+                                         startActivity(intent);
+                                         finish();
+                                     }else{
