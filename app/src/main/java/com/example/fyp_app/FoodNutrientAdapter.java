@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewParent;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -23,7 +24,7 @@ public class FoodNutrientAdapter extends RecyclerView.Adapter<FoodNutrientAdapte
         private final TextView foodName;
         private final TextView foodGram;
         private final TextView foodRank;
-        private final Button moreInfo;
+        private final ImageButton moreInfo;
 
         public ViewHolder(View view) {
             super(view);
@@ -32,7 +33,7 @@ public class FoodNutrientAdapter extends RecyclerView.Adapter<FoodNutrientAdapte
             foodName = (TextView) view.findViewById(R.id.foodName);
             foodGram = (TextView) view.findViewById(R.id.foodGram);
             foodRank = (TextView) view.findViewById(R.id.foodRank);
-            moreInfo = (Button) view.findViewById(R.id.moreInfo);
+            moreInfo = (ImageButton) view.findViewById(R.id.moreInfo);
             ViewParent v = ((View) foodName).getParent();
             ((LinearLayout) v).setBaselineAligned(false);
 
@@ -60,7 +61,7 @@ public class FoodNutrientAdapter extends RecyclerView.Adapter<FoodNutrientAdapte
         public TextView getFoodRank() {
             return foodRank;
         }
-        public Button getMoreInfo() {
+        public ImageButton getMoreInfo() {
             return moreInfo;
         }
     }

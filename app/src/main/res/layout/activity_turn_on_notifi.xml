@@ -19,6 +19,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="80dp"
         android:textSize="25sp"
+        android:textColor="@color/black"
         android:text="Do you want to turn" />
 
     <TextView
@@ -27,6 +28,7 @@
         android:layout_height="wrap_content"
         android:text="on notification?"
         android:textSize="25sp"
+        android:textColor="@color/black"
         android:layout_centerHorizontal="true"
         android:layout_below="@id/text1" />
 

@@ -23,6 +23,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Trainings"
+            android:textColor="@color/black"
             android:textStyle="bold"
             android:textSize="30dp"
             />
@@ -231,6 +232,7 @@
             android:text="By body part"
             android:textSize="20dp"
             android:textStyle="bold"
+            android:textColor="@color/black"
             android:layout_below="@+id/field1"
             android:layout_marginTop="10dp"/>
 

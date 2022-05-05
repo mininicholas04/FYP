@@ -5,350 +5,124 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="30dp">
-
-    <LinearLayout
-        android:id="@+id/field2"
-        android:layout_width="match_parent"
-        android:layout_height="160dp"
-        android:layout_below="@+id/text44"
-        android:layout_marginTop="443dp">
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/depression"
-            android:layout_width="90dp"
-            android:layout_height="111dp"
-            android:layout_marginLeft="5dp"
-            android:layout_marginTop="5dp"
-            app:cardCornerRadius="30dp"
-            app:cardElevation="10dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:text="Coffee"
-                    android:textAlignment="center"
-                    android:textSize="15dp"
-                    android:textStyle="bold" />
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center"
-                    android:src="@drawable/coffee" />
-
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/eyes"
-            android:layout_width="90dp"
-            android:layout_height="113dp"
-            android:layout_marginLeft="25dp"
-            android:layout_marginTop="5dp"
-            app:cardBackgroundColor="@color/white"
-            app:cardCornerRadius="30dp"
-            app:cardElevation="10dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:text="Dark Chocolate"
-                    android:textAlignment="center"
-                    android:textSize="15dp"
-                    android:textStyle="bold" />
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center"
-                    android:src="@drawable/chocolate" />
-
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/legs"
-            android:layout_width="90dp"
-            android:layout_height="115dp"
-            android:layout_marginLeft="25dp"
-            android:layout_marginTop="5dp"
-            app:cardBackgroundColor="@color/white"
-            app:cardCornerRadius="30dp"
-            app:cardElevation="10dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:text="Banana"
-                    android:textAlignment="center"
-                    android:textSize="15dp"
-                    android:textStyle="bold" />
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center"
-                    android:src="@drawable/bananas" />
-
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-    </LinearLayout>
-
-    <LinearLayout
-
-        android:layout_width="match_parent"
-        android:layout_height="160dp"
-        android:layout_below="@+id/text44"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="30dp">
-
-        <androidx.cardview.widget.CardView
-
-            android:layout_width="90dp"
-            android:layout_height="111dp"
-            android:layout_marginLeft="5dp"
-            android:layout_marginTop="5dp"
-            android:onClick="P1_bay"
-            app:cardCornerRadius="30dp"
-            app:cardElevation="10dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:text="Salmon"
-                    android:textAlignment="center"
-                    android:textSize="15dp"
-                    android:textStyle="bold" />
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center"
-                    android:src="@drawable/salmon" />
-
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-
-            android:layout_width="90dp"
-            android:layout_height="113dp"
-            android:layout_marginLeft="25dp"
-            android:layout_marginTop="5dp"
-            app:cardBackgroundColor="@color/white"
-            app:cardCornerRadius="30dp"
-            app:cardElevation="10dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:text="Egg"
-                    android:textAlignment="center"
-                    android:textSize="15dp"
-                    android:textStyle="bold" />
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center"
-                    android:src="@drawable/egg" />
-
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-
-            android:layout_width="90dp"
-            android:layout_height="115dp"
-            android:layout_marginLeft="25dp"
-            android:layout_marginTop="5dp"
-            app:cardBackgroundColor="@color/white"
-            app:cardCornerRadius="30dp"
-            app:cardElevation="10dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:text="Nut"
-                    android:textAlignment="center"
-                    android:textSize="15dp"
-                    android:textStyle="bold" />
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center"
-                    android:src="@drawable/nut" />
-
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-    </LinearLayout>
+    android:background="#eeebe9">
 
     <TextView
-        android:id="@+id/text44"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:text="Depression"
-        android:textSize="20dp"
-        android:textStyle="bold" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="160dp"
-        android:layout_below="@+id/text44"
-        android:layout_marginTop="220dp"
-        android:layout_marginBottom="30dp">
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="90dp"
-            android:layout_height="111dp"
-            android:layout_marginLeft="5dp"
-            android:layout_marginTop="5dp"
-            app:cardCornerRadius="30dp"
-            app:cardElevation="10dp">
-
-            <LinearLayout
-                android:layout_height="match_parent"
-                android:layout_width="match_parent"
-                android:orientation="vertical">
-
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:text="Milk"
-                    android:textAlignment="center"
-                    android:textSize="15dp"
-                    android:textStyle="bold" />
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center"
-                    android:src="@drawable/milk" />
-
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="90dp"
-            android:layout_height="113dp"
-            android:layout_marginLeft="25dp"
-            android:layout_marginTop="5dp"
-            app:cardBackgroundColor="@color/white"
-            app:cardCornerRadius="30dp"
-            app:cardElevation="10dp">
-
-            <LinearLayout
-                android:layout_height="match_parent"
-                android:layout_width="match_parent"
-                android:orientation="vertical">
-
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:text=" Whole    Grain"
-                    android:textAlignment="center"
-                    android:textSize="15dp"
-                    android:textStyle="bold" />
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center"
-                    android:src="@drawable/bread" />
-
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="90dp"
-            android:layout_height="115dp"
-            android:layout_marginLeft="25dp"
-            android:layout_marginTop="5dp"
-            app:cardBackgroundColor="@color/white"
-            app:cardCornerRadius="30dp"
-            app:cardElevation="10dp">
-
-            <LinearLayout
-                android:layout_height="match_parent"
-                android:layout_width="match_parent"
-                android:orientation="vertical">
-
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:text="Tomato"
-                    android:textAlignment="center"
-                    android:textSize="15dp"
-                    android:textStyle="bold" />
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center"
-                    android:src="@drawable/tomato" />
-
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-    </LinearLayout>
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginLeft="150dp"
+        android:background="@drawable/bg_food_2"
+        android:layout_alignParentRight="true"
+        />
 
     <TextView
-        android:id="@+id/text34"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="-277dp"
-        android:text="Nutritinal facts"
-        android:textSize="20dp"
-        android:textStyle="bold" />
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:background="@drawable/bg_food_3"
+        android:layout_alignParentBottom="true"
+        />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="30dp">
+        <TextView
+            android:id="@+id/text_top"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Depression"
+            android:textSize="30dp"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/text44"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_below="@+id/text_top"
+            android:text="Eat every day to beat depression!" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/text44"
+            android:layout_marginTop="30dp">
+
+            <TableLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TableRow>
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="170dp"
+                        android:layout_height="380dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="5dp"
+                        app:cardCornerRadius="30dp"
+                        android:id="@+id/salmon"
+                        android:onClick="P1_bay">
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/salmon"
+                            android:scaleType="centerCrop" />
+                    </androidx.cardview.widget.CardView>
+                </TableRow>
+                <TableRow>
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="170dp"
+                        android:layout_height="110dp"
+                        android:layout_marginTop="15dp"
+                        app:cardBackgroundColor="@color/white"
+                        app:cardCornerRadius="30dp">
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/egg"
+                            android:scaleType="centerCrop" />
+                    </androidx.cardview.widget.CardView>
+                </TableRow>
+            </TableLayout>
+
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/text44">
+                <TableRow>
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="145dp"
+                        android:layout_height="190dp"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="5dp"
+                        app:cardBackgroundColor="@color/white"
+                        app:cardCornerRadius="30dp">
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/milk"
+                            android:scaleType="centerCrop" />
+                    </androidx.cardview.widget.CardView>
+
+                </TableRow>
+                <TableRow>
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="145dp"
+                        android:layout_height="300dp"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="15dp"
+                        app:cardBackgroundColor="@color/white"
+                        app:cardCornerRadius="30dp">
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/nut"
+                            android:scaleType="centerCrop" />
+                    </androidx.cardview.widget.CardView>
+                </TableRow>
+            </TableLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
 
 </RelativeLayout>

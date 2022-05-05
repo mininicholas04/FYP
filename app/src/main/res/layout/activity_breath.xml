@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/gray"
+    android:background="@drawable/medi_bg"
     tools:context=".Breath">
 
 
@@ -29,7 +29,6 @@
         android:layout_height="35dp"
         android:layout_marginTop="36dp"
         android:text="60"
-        android:textColor="@color/colorAccent"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -48,15 +47,16 @@
 
     <Button
         android:id="@+id/startbtn"
-        android:layout_width="250dp"
-        android:layout_height="50dp"
-        android:layout_marginBottom="16dp"
+        android:layout_width="150dp"
+        android:layout_height="30dp"
+        android:layout_marginBottom="36dp"
+        android:textColor="@color/white"
+        android:background="@drawable/button_roundcorner"
         android:text="Start"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        android:background="@drawable/roundedbutton"/>
+        app:layout_constraintHorizontal_bias="0.499"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
         android:id="@+id/flower"
@@ -68,23 +68,24 @@
         android:background="@drawable/breath"
         app:layout_constraintBottom_toTopOf="@+id/startbtn"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintHorizontal_bias="0.499"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.76"></ImageView>
+        app:layout_constraintVertical_bias="0.572"></ImageView>
 
     <TextView
         android:id="@+id/breathtxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Breathe"
-        android:textColor="@color/colorAccent"
+        android:text="Take a breathe"
+        android:textColor="@color/black"
         android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/flower"
+        app:layout_constraintHorizontal_bias="0.513"
         app:layout_constraintStart_toStartOf="@+id/flower"
         app:layout_constraintTop_toTopOf="@+id/flower"
-        app:layout_constraintVertical_bias="0.735" />
+        app:layout_constraintVertical_bias="0.724" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

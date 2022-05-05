@@ -10,9 +10,10 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginBottom="4dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginBottom="8dp"
         android:text="YOGA"
+        android:textColor="@color/black"
         android:textSize="30sp"
         app:layout_constraintBottom_toTopOf="@+id/textView2"
         app:layout_constraintStart_toStartOf="@+id/textView2" />
@@ -22,8 +23,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
-        android:layout_marginEnd="36dp"
+        android:layout_marginEnd="68dp"
         android:text="and move."
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="@+id/textView2"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
@@ -35,6 +37,7 @@
         android:layout_marginBottom="76dp"
         android:clickable="true"
         android:text="Create account"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView5" />
@@ -68,9 +71,10 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
+        android:layout_marginStart="8dp"
         android:layout_marginBottom="40dp"
         android:text="A way to think, breathe,"
+        android:textSize="20dp"
         app:layout_constraintBottom_toTopOf="@+id/btn_login"
         app:layout_constraintStart_toStartOf="@+id/btn_login" />
 

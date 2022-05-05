@@ -16,7 +16,7 @@
         android:text="Skip"
         android:textColor="@color/light_grey"
         android:textSize="10dp" />
-  <RelativeLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginStart="70dp"
@@ -26,6 +26,7 @@
 
         <TextView
             android:id="@+id/welcome"
+            android:textColor="@color/black"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
@@ -39,14 +40,14 @@
             android:layout_below="@+id/welcome"
             android:text="Sign in to continue" />
 
-      <EditText
-          android:id="@+id/user_email"
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:layout_marginTop="150dp"
-          android:background="@drawable/edit_text_design"
-          android:hint="Email"
-          android:padding="8dp" />
+        <EditText
+            android:id="@+id/user_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="150dp"
+            android:background="@drawable/edit_text_design"
+            android:hint="Email"
+            android:padding="8dp" />
 
         <EditText
             android:id="@+id/user_password"
@@ -92,6 +93,7 @@
                 android:text="OR" />
 
             <View
+                android:id="@+id/line_a"
                 android:layout_width="110dp"
                 android:layout_height="1.5dp"
                 android:layout_marginLeft="15dp"
@@ -100,30 +102,12 @@
 
         </LinearLayout>
 
-        <TextView
-            android:id="@+id/text_media"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/or_field"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="32dp"
-            android:text="Social Media Login"
-            android:textStyle="bold" />
-
-        <ImageView
-            android:id="@+id/facebook_icon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/text_media"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="25dp"
-            android:src="@drawable/ic_baseline_facebook_24" />
 
         <LinearLayout
             android:id="@+id/layout1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/facebook_icon"
+            android:layout_below="@+id/or_field"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="25dp"
             android:orientation="horizontal">
@@ -139,6 +123,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="15dp"
                 android:clickable="true"
+                android:textColor="@color/black"
                 android:text="Create account" />
 
         </LinearLayout>

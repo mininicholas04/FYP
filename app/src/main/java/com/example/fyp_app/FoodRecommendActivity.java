@@ -79,7 +79,6 @@ public class FoodRecommendActivity extends AppCompatActivity {
             // checking if the page number is greater than limit.
             // displaying toast message in this case when page>limit.
             Toast.makeText(this, "That's all the data..", Toast.LENGTH_SHORT).show();
-
             // hiding our progress bar.
             loadingPB.setVisibility(View.GONE);
             return;
