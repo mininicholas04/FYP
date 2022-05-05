@@ -14,7 +14,7 @@
 
         <!--image view for displaying user image-->
         <ImageView
-            android:id="@+id/idIVUser"
+            android:id="@+id/foodRecommendImage"
             android:layout_width="200dp"
             android:layout_height="200dp"
             android:layout_marginStart="10dp"
@@ -24,39 +24,119 @@
 
         <!--text view for displaying first name-->
         <TextView
-            android:id="@+id/idTVFirstName"
+            android:id="@+id/foodRecommendTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:layout_toEndOf="@id/idIVUser"
-            android:layout_toRightOf="@id/idIVUser"
-            android:text="First Name"
+            android:layout_toEndOf="@id/foodRecommendImage"
+            android:layout_toRightOf="@id/foodRecommendImage"
+            android:text="Title"
             android:textColor="@color/black"
             android:textSize="15sp" />
 
         <!--text view for displaying last name-->
         <TextView
-            android:id="@+id/idTVLastName"
-            android:layout_width="match_parent"
+            android:id="@+id/calories"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/idTVFirstName"
+            android:layout_below="@id/foodRecommendTitle"
             android:layout_marginTop="10dp"
-            android:layout_toEndOf="@id/idIVUser"
-            android:layout_toRightOf="@id/idIVUser"
-            android:text="Last Name"
+            android:layout_toEndOf="@id/foodRecommendImage"
+            android:layout_toRightOf="@id/foodRecommendImage"
+            android:text="Calories"
             android:textColor="@color/black"
             android:textSize="15sp" />
 
         <!--text view for displaying user email-->
         <TextView
-            android:id="@+id/idTVEmail"
-            android:layout_width="match_parent"
+            android:id="@+id/caloriesKcal"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/idTVLastName"
+            android:layout_below="@id/calories"
+            android:layout_marginStart="100dp"
+            android:layout_marginLeft="125dp"
+            android:layout_marginTop="-20dp"
+            android:layout_toEndOf="@id/foodRecommendImage"
+            android:layout_toRightOf="@id/foodRecommendImage"
+            android:text="kcal"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/idTVProteinName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/calories"
             android:layout_marginTop="10dp"
-            android:layout_toEndOf="@id/idIVUser"
-            android:layout_toRightOf="@id/idIVUser"
-            android:text="Email"
+            android:layout_toEndOf="@id/foodRecommendImage"
+            android:layout_toRightOf="@id/foodRecommendImage"
+            android:text="Protein"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/idTVProteinAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/caloriesKcal"
+            android:layout_marginStart="125dp"
+            android:layout_marginLeft="125dp"
+            android:layout_marginTop="10dp"
+            android:layout_toEndOf="@id/foodRecommendImage"
+            android:layout_toRightOf="@id/foodRecommendImage"
+            android:text="g"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/idTVFatName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/idTVProteinName"
+            android:layout_marginTop="10dp"
+            android:layout_toEndOf="@id/foodRecommendImage"
+            android:layout_toRightOf="@id/foodRecommendImage"
+            android:text="Fat"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/idTVFatAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/idTVProteinName"
+            android:layout_marginStart="125dp"
+            android:layout_marginLeft="125dp"
+            android:layout_marginTop="10dp"
+            android:layout_toEndOf="@id/foodRecommendImage"
+            android:layout_toRightOf="@id/foodRecommendImage"
+            android:text="g"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/idTVCarbohydratesName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/idTVProteinName"
+            android:layout_marginTop="38dp"
+            android:layout_toEndOf="@id/foodRecommendImage"
+            android:layout_toRightOf="@id/foodRecommendImage"
+            android:text="Carbohydrates"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/idTVCarbohydratesAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/idTVProteinName"
+            android:layout_marginStart="125dp"
+            android:layout_marginLeft="125dp"
+            android:layout_marginTop="40dp"
+            android:layout_toEndOf="@id/foodRecommendImage"
+            android:layout_toRightOf="@id/foodRecommendImage"
+            android:text="g"
             android:textColor="@color/black"
             android:textSize="15sp" />
 

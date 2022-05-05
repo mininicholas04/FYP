@@ -85,7 +85,7 @@ public class FoodRecommendActivity extends AppCompatActivity {
             return;
         }*/
         // creating a string variable for url .
-        String url = "https://api.spoonacular.com/recipes/complexSearch?query=Salmon&minFat=10&number=10&apiKey=7ed522da19374c0f8aba43afd5c3aaba&sort=random";
+        String url = "https://api.spoonacular.com/recipes/complexSearch?query=Salmon&minFat=10&minProtein=10&minCalories=50&minCarbs=10&number=4&apiKey=36e34d5dffd4425aa00f5b43c817935d&sort=random";
 
         // creating a new variable for our request queue
         RequestQueue queue = Volley.newRequestQueue(FoodRecommendActivity.this);
@@ -104,9 +104,20 @@ public class FoodRecommendActivity extends AppCompatActivity {
                         JSONObject jsonObject = dataArray.getJSONObject(i);
 
                         // on below line we are extracting data from our json object.
-                        userModalArrayList.add(new FoodModal(jsonObject.getString("title"), jsonObject.getString("image"), jsonObject.getJSONObject("nutrition")
-                                .getJSONArray("nutrients")
-                                .getJSONObject(0).getInt("amount")));
+                        userModalArrayList.add(new FoodModal(
+
+                                jsonObject.getString("title"),
+
+                                jsonObject.getString("image"),
+
+                                jsonObject.getJSONObject("nutrition").getJSONArray("nutrients").getJSONObject(0).getInt("amount"),
+
+                                jsonObject.getJSONObject("nutrition").getJSONArray("nutrients").getJSONObject(1).getInt("amount"),
+
+                                jsonObject.getJSONObject("nutrition").getJSONArray("nutrients").getJSONObject(2).getInt("amount"),
+
+                                jsonObject.getJSONObject("nutrition").getJSONArray("nutrients").getJSONObject(3).getInt("amount")
+                        ));
 
                         // passing array list to our adapter class.
                         userRVAdapter = new FoodRVAdapter(userModalArrayList, FoodRecommendActivity.this);
