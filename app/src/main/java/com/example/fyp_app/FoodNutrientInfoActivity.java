@@ -42,7 +42,7 @@ public class FoodNutrientInfoActivity extends AppCompatActivity {
             String temp = jsonObject.getString("title");
             Uri imgUri=Uri.parse(jsonObject.getString("image"));
             Picasso.get().load(imgUri).into(foodPicture);
-            foodPicture.setImageURI(imgUri);
+            //foodPicture.setImageURI(imgUri);
             //Log.v("data",temp);
             foodTitle.setText(temp);
 

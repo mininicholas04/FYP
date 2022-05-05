@@ -15,6 +15,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.example.fyp_app.DepressionActivity;
 import com.example.fyp_app.FoodNutrient;
 import com.example.fyp_app.MainActivity;
 import com.example.fyp_app.R;
@@ -43,6 +44,16 @@ Button btn_scan;
             public void onClick(View v) {
                 //write your function here.
                 startActivity(new Intent(getActivity(), FoodNutrient.class));
+            }
+        });
+
+        CardView depression = root.findViewById(R.id.depression);
+
+        depression.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //write your function here.
+                startActivity(new Intent(getActivity(), DepressionActivity.class));
             }
         });
 

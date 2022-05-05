@@ -93,6 +93,10 @@
         <activity android:name=".FoodNutrient" />
         <receiver android:name=".Notification_reciever"
             android:enabled="true"/>
+
+        <activity android:name=".DepressionActivity" />
+        <activity android:name=".FoodRecommendActivity" />
+
     </application>
 
 </manifest>
