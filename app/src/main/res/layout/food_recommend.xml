@@ -8,30 +8,48 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <!--linear layout for displaying
-        our recycler view-->
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_margin="5dp">
 
-        <!--recycler view for displaying our list of data
-            and we are making nested scroll for our
-            recycler view as false-->
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/idRVUsers"
+        <TextView
+            android:id="@+id/title_food"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="25sp"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"
+            android:text="Eating inspiration"/>
+
+        <!--linear layout for displaying
+            our recycler view-->
+        <LinearLayout
+            android:layout_marginTop="15dp"
+            android:layout_below="@+id/title_food"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:nestedScrollingEnabled="false"
-            tools:listitem="@layout/food_rv_item" />
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-        <!--we are adding progress bar
-            for the purpose of loading-->
-        <ProgressBar
-            android:id="@+id/idPBLoading"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-    </LinearLayout>
+            <!--recycler view for displaying our list of data
+                and we are making nested scroll for our
+                recycler view as false-->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/idRVUsers"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:nestedScrollingEnabled="false"
+                tools:listitem="@layout/food_rv_item" />
 
+            <!--we are adding progress bar
+                for the purpose of loading-->
+            <ProgressBar
+                android:id="@+id/idPBLoading"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+    </RelativeLayout>
 </androidx.core.widget.NestedScrollView>
